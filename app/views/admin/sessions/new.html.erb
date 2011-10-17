@@ -1,0 +1,17 @@
+<%= form_tag admin_sessions_path do -%>
+<table class="data2">
+<tr>
+  <th><%= label_tag 'name' %></th>
+  <td><%= text_field_tag 'name', @name , :class=>"login_input"%></td>
+</tr>
+<tr>
+  <th><%= label_tag 'password' %></th>
+  <td><%= password_field_tag 'password', nil ,:class=>"login_input"%></td>
+</tr>
+</table>
+<div class="btn_box space20_bottom">
+  <%= submit_tag '登录',:class=>'btn' %>
+  <img width="6" alt="login" height="34" class="btn_side" src="/assets/admin/btn_side.gif"/>
+</div>
+
+<% end -%>

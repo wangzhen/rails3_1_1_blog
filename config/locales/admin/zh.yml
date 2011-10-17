@@ -1,0 +1,14 @@
+zh:
+   h2:
+     management: 基本信息管理
+     administrators: "管理员管理"
+     edit_administrator: "管理Menu"
+     new_administrator: "管理Menu"
+     session_home: 管理首页
+     blogs: "BLOG管理"
+     edit_blog: "BLOG编辑"
+     new_blog: "BLOG新增"
+     categories: "分类管理"
+     edit_category: "分类编辑"
+     new_category: "分类新增"
+
