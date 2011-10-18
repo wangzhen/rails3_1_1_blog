@@ -12,6 +12,9 @@ gem 'kaminari'
 gem "meta_search"
 gem 'annotate'
 gem 'nifty-generators'
+gem 'execjs'
+gem 'therubyracer'
+
 #gem 'rails-i18n'
 
 # Gems used only for assets and not required
