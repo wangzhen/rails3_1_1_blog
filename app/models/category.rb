@@ -11,5 +11,14 @@
 class Category < ActiveRecord::Base
 
   has_many :blogs
+
+  def self.root
+    Category.where('parent_id' => nil)
+  end
+
+  def children
+    Category.where('parent_id' => self.parent_id)
+  end
+
 end
 

@@ -37,14 +37,7 @@ ActiveRecord::Schema.define(:version => 20111017073443) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sabro_firsts", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "content"
+    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
