@@ -16,7 +16,7 @@
 # Please note: if you change this, all the passwords will be invalidated, so DO
 # keep it someplace secure.  Use the random value given or type in the lyrics to
 # your favorite Jay-Z song or something; any moderately long, unpredictable text.
-REST_AUTH_SITE_KEY         = 'bec9178a7f21340e0018ef46502708a1e86a9af0'
+REST_AUTH_SITE_KEY         = 'f9287b158c228640dab382580b88b528b23dc5da'
   
 # Repeated applications of the hash make brute force (even with a compromised
 # database and site key) harder, and scale with Moore's law.
@@ -36,7 +36,3 @@ REST_AUTH_SITE_KEY         = 'bec9178a7f21340e0018ef46502708a1e86a9af0'
 # * "An Illustrated Guide to Cryptographic Hashes":http://www.unixwiz.net/techtips/iguide-crypto-hashes.html
 
 REST_AUTH_DIGEST_STRETCHES = 10
-
-
-RRRR = 'rrrr'
-

@@ -1,32 +1,39 @@
-<%= form_for [:admin, @administrator], :url => path do |form| %>
-  <% @administrator.errors.full_messages.each do |message|  %>
-  <%=  message  %>
-  <% end %>
-  <table class="data2 data3" cellspacing="0">
-    <tr>
-      <th><label><%= Administrator.human_attribute_name("name") %>:</label></th>
-      <td>
-        <%= form.text_field :name, :maxlength => 50, :size => 40 %>
-     
-      </td>
-    </tr>
-    <tr>
-      <th><label><%= Administrator.human_attribute_name("password") %>:</label></th>
-      <td>
-        <%= form.password_field :password, :maxlength => 50, :size => 40 %>
-  
-      </td>
-    </tr>
-    <tr>
-      <th><label><%= Administrator.human_attribute_name("password_confirmation") %>:</label></th>
-      <td>
-        <%= form.password_field :password_confirmation, :maxlength => 50, :size => 40 %>
- 
-      </td>
-    </tr>
-    <tr><td  class="center" colspan="2"><%= form.submit t('labels.save') ,:class => 'btn_s' %></td></tr>
-  </table>
+<%= form_for [:admin, instance_variable_get("@#{controller_name.singularize}")], :url => path, :html => {:multipart => true ,:id => 'form'} do |form| %>
+  <div class="LeftNew">
+    <div class="Inner">
+      <%=render :partial => "/admin/shared/errors" ,:locals =>{:model => instance_variable_get("@#{controller_name.singularize}") }  %>
+      <div class="AcceNew">
+
+        <dl>
+          <dt><%= controller_name.classify.constantize.human_attribute_name(:name) %></dt>
+          <dd>
+            <%= form.text_field   :name , :class => 'style1' %>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt><%= controller_name.classify.constantize.human_attribute_name(:password) %></dt>
+          <dd>
+            <%#= form.text_area   :content  %>
+            <%= form.password_field :password, :class => 'style1' %>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt><%= controller_name.classify.constantize.human_attribute_name(:password_confirmation) %></dt>
+          <dd>
+            <%#= form.text_area   :content  %>
+            <%= form.password_field :password_confirmation, :class => 'style1' %>
+          </dd>
+        </dl>
+
+      </div>
+      <div class="PostBtn">
+        <p>
+          <%= form.submit t('labels.save')  , :class=>"btnW2_search" %>
+        </p>
+        <br class="clear" />
+      </div>
+    </div>
+  </div>
 <% end %>
-<div class="link-right">
-  <%= link_to t('labels.back'), admin_administrators_path, :class=>"link_s"%>
-</div>

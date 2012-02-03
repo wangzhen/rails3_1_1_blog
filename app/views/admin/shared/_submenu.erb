@@ -7,14 +7,14 @@
 
  
 
-      <li class="Level1 <%= 'current' if controller_name == 'administrator' %>"><%= link_to t('labels.manager', :model => News.model_name.human), admin_news_index_path, :class => "l1" %>
+      <li class="Level1 <%= 'current' if controller_name == 'administrator' %>"><%= link_to t('labels.manager', :model => Administrator.model_name.human), admin_administrators_path, :class => "l1" %>
         <% if  ['news'].include?(controller_name) %>
           <ul class="Level2">
             <li class=" <%= (action_name=='edit'||action_name=='index')&& controller_name=='news' ? 'on' :'' %>">
-              <%= link_to t('labels.manager', :model => Admistrator.model_name.human), admin_administrator_path %>
+              <%= link_to t('labels.manager', :model => Administrator.model_name.human), admin_administrators_path %>
             </li>
             <li class="last <%= action_name=='new'&& controller_name=='news' ? 'on' :'' %>">
-              <%= link_to t('labels.add_manager', :model => Admistrator.model_name.human), new_admin_administrator_path %>
+              <%= link_to t('labels.add_manager', :model => Administrator.model_name.human), new_admin_administrator_path %>
             </li>
           </ul>
         <% end %>

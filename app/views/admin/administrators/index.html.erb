@@ -3,7 +3,7 @@
   <div class="TitleArea">
     <h2><%= t('labels.manager', :model => controller_name.classify.constantize.model_name.human) %></h2>
 
-    <p class="btnW5"><%= link_to t('labels.add_manager', :model => ''), new_admin_jpop_path %></p>
+    <p class="btnW5"><%= link_to t('labels.add_manager', :model => ''), eval("new_admin_#{controller_name.singularize}_path") %></p>
   </div>
 
   <%= render :partial => "/admin/shared/notice" %>
@@ -34,8 +34,8 @@
             <td class="<%= cycle_class %>">
               <%#= link_to '主题管理', admin_subjects_path(:jpop_id => jpop.id) %>
               <%#= link_to '商店管理', admin_shops_path(:jpop_id => jpop.id) %>
-              <%= link_to t('labels.edit'), evel("admin_#{controller_name}_path") ) %><br/>
-              <%= link_to t('labels.delete'),  evel("admin_#{controller_name.singularize}_path(obj)")  ,:method => :delete ,:confirm  => t('confirmation.delete')%><br/>
+              <%= link_to t('labels.edit'), eval("admin_#{controller_name.singularize}_path(obj)")  %><br/>
+              <%= link_to t('labels.delete'),  eval("admin_#{controller_name.singularize}_path(obj)")  ,:method => :delete ,:confirm  => t('confirmation.delete')%><br/>
               <br/>
             </td>
           </tr>

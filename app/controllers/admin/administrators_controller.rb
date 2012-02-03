@@ -1,4 +1,4 @@
-class Admin::BlogsController < Admin::BaseController
+class Admin::AdministratorsController < Admin::BasesController
 
   before_filter do
     @model_class = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.classify.constantize
@@ -8,7 +8,7 @@ class Admin::BlogsController < Admin::BaseController
   def index
 
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @search = @model.search(params[:search])
+    @search = @model_class.search(params[:search])
 
     unless params[:keyword].blank?
       keyword = split_keyword(params[:keyword])
@@ -18,20 +18,20 @@ class Admin::BlogsController < Admin::BaseController
         end
       end
     end
-    @blogs =@search.page(params[:page] || 1).per(10)
+    @administrators =@search.page(params[:page] || 1).per(10)
   end
 
   def new
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @blog = @model.new
+    @administrator = @model_class.new
   end
 
   def create
 
-    @blog = @model_class.new(params[:blog])
-    if @blog.save
+    @administrator = @model_class.new(params[:administrator])
+    if @administrator.save
       flash[:notice] = t('labels.created_success')
-      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+      redirect_to eval("admin_#{@model_singularize.tableize}_path")
     else
       render :action => :new
     end
@@ -39,31 +39,31 @@ class Admin::BlogsController < Admin::BaseController
 
   def edit
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @blog = @model_class.find(params[:id])
+    @administrator = @model_class.find(params[:id])
   end
 
   def show
-    @blog = @model_class.find(params[:id])
+    @administrator = @model_class.find(params[:id])
     render :edit
   end
 
   def update
-    @blog = @model_class.find(params[:id])
-    #    params[:blog][:category] = params[:categories].join(",") unless params[:categories].blank?
-    if @blog.update_attributes(params[:blog])
+    @administrator = @model_class.find(params[:id])
+    #    params[:administrator][:category] = params[:categories].join(",") unless params[:categories].blank?
+    if @administrator.update_attributes(params[:administrator])
       flash[:notice] = t('labels.update_success')
-      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+      redirect_to eval("admin_#{@model_singularize.tableize}_path")
     else
       render :action => 'edit'
     end
   end
 
   def destroy
-    @blog = @model_class.find(params[:id])
-    @blog.destroy
+    @administrator = @model_class.find(params[:id])
+    @administrator.destroy
 
     respond_to do |format|
-      format.html { redirect_to( evel("admin_#{@model_singularize.tableize}_path")) }
+      format.html { redirect_to( eval("admin_#{@model_singularize.tableize}_path")) }
       format.xml { head :ok }
     end
   end
