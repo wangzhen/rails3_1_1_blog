@@ -1,100 +1,73 @@
 class Admin::CategoriesController < Admin::BasesController
-  before_filter :admin_authorize
-  # GET /categories
-  # GET /categories.xml
+
+  before_filter do
+    @model_class = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.classify.constantize
+    @model_singularize = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize
+  end
+
   def index
 
-    @title = t("h2.categories")
-    @search = Category.search(params[:search])
-
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @search = @model.search(params[:search])
 
     unless params[:keyword].blank?
-      name = split_keyword(params[:keyword])
-      @search.name_like = params[:keyword]
+      keyword = split_keyword(params[:keyword])
+      keyword.each do |word|
+        @search.conditions.group do |group|
+          group.or_name_like = word
+        end
+      end
     end
-
-
-    @categories = @search.page(params[:page]).per(params[:per_page]||25)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @categories }
-    end
+    @blogs =@search.page(params[:page] || 1).per(10)
   end
 
-  # GET /categories/1
-  # GET /categories/1.xml
-  def show
-    @title = t("h2.categories")
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @category }
-    end
-  end
-
-  # GET /categories/new
-  # GET /categories/new.xml
   def new
-    @title = t("h2.categories")
-    @category = Category.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @category }
-    end
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @blog = @model.new
   end
 
-  # GET /categories/1/edit
-  def edit
-    @title = t("h2.categories")
-    @category = Category.find(params[:id])
-  end
-
-  # POST /categories
-  # POST /categories.xml
   def create
-    @category = Category.new(params[:category])
 
-    respond_to do |format|
-      if @category.save
-        flash[:notice] = 'Category was successfully created.'
-        format.html { redirect_to(admin_categories_path) }
-        format.xml  { render :xml => @category, :status => :created, :location => @category }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
-      end
+    @blog = @model_class.new(params[:blog])
+    if @blog.save
+      flash[:notice] = t('labels.created_success')
+      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+    else
+      render :action => :new
     end
   end
 
-  # PUT /categories/1
-  # PUT /categories/1.xml
+  def edit
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @blog = @model_class.find(params[:id])
+  end
+
+  def show
+    @blog = @model_class.find(params[:id])
+    render :edit
+  end
+
   def update
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        flash[:notice] = 'Category was successfully updated.'
-        format.html { redirect_to(admin_categories_path) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @category.errors, :status => :unprocessable_entity }
-      end
+    @blog = @model_class.find(params[:id])
+    #    params[:blog][:category] = params[:categories].join(",") unless params[:categories].blank?
+    if @blog.update_attributes(params[:blog])
+      flash[:notice] = t('labels.update_success')
+      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+    else
+      render :action => 'edit'
     end
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.xml
   def destroy
-    @category = Category.find(params[:id])
-    @category.destroy
+    @blog = @model_class.find(params[:id])
+    @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_categories_path) }
-      format.xml  { head :ok }
+      format.html { redirect_to( evel("admin_#{@model_singularize.tableize}_path")) }
+      format.xml { head :ok }
     end
   end
+
+
+
 end

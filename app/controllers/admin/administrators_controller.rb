@@ -1,75 +1,73 @@
-class Admin::AdministratorsController < Admin::BasesController
+class Admin::BlogsController < Admin::BaseController
+
+  before_filter do
+    @model_class = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.classify.constantize
+    @model_singularize = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize
+  end
+
   def index
-    @administrators = Administrator.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @administrators }
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @search = @model.search(params[:search])
+
+    unless params[:keyword].blank?
+      keyword = split_keyword(params[:keyword])
+      keyword.each do |word|
+        @search.conditions.group do |group|
+          group.or_name_like = word
+        end
+      end
     end
+    @blogs =@search.page(params[:page] || 1).per(10)
   end
 
-  # GET /administrators/1
-  # GET /administrators/1.xml
-  def show
-    @administrator = Administrator.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @administrator }
-    end
-  end
-
-  # GET /administrators/new
-  # GET /administrators/new.xml
   def new
-    @administrator = Administrator.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @administrator }
-    end
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @blog = @model.new
   end
 
-  # GET /administrators/1/edit
-  def edit
-    @administrator = Administrator.find(params[:id])
-  end
-
-  # POST /administrators
-  # POST /administrators.xml
   def create
-    @administrator = Administrator.new(params[:administrator])
 
-    if @administrator.save
-      flash[:notice] = 'Administrator was successfully created.'
-      redirect_to :action => 'index'
+    @blog = @model_class.new(params[:blog])
+    if @blog.save
+      flash[:notice] = t('labels.created_success')
+      redirect_to evel("admin_#{@model_singularize.tableize}_path")
     else
-      render :action => "new"
+      render :action => :new
     end
   end
 
-  # PUT /administrators/1
-  # PUT /administrators/1.xml
+  def edit
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @blog = @model_class.find(params[:id])
+  end
+
+  def show
+    @blog = @model_class.find(params[:id])
+    render :edit
+  end
+
   def update
-    @administrator = Administrator.find(params[:id])
-
-    if @administrator.update_attributes(params[:administrator])
-      flash[:notice] = 'Administrator was successfully updated.'
-      redirect_to :action => 'index'
+    @blog = @model_class.find(params[:id])
+    #    params[:blog][:category] = params[:categories].join(",") unless params[:categories].blank?
+    if @blog.update_attributes(params[:blog])
+      flash[:notice] = t('labels.update_success')
+      redirect_to evel("admin_#{@model_singularize.tableize}_path")
     else
-      render :action => "edit"
+      render :action => 'edit'
     end
   end
 
-  # DELETE /administrators/1
-  # DELETE /administrators/1.xml
   def destroy
-    @administrator = Administrator.find(params[:id])
-    @administrator.destroy
+    @blog = @model_class.find(params[:id])
+    @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to(administrators_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to( evel("admin_#{@model_singularize.tableize}_path")) }
+      format.xml { head :ok }
     end
   end
+
+
+
 end

@@ -13,24 +13,20 @@
 require "digest/sha1"
 class Administrator < ActiveRecord::Base
 
+  define_model_callbacks :create
 
+  before_create :set_salted_password
   attr_accessor :password
-  #  attr_accessor :confirmation_password
-  validates_presence_of :name
-  validates_presence_of :password ,:on => :create
-  validates_confirmation_of :password , :if => :password_changed?
-  validates_uniqueness_of :name
 
-  def before_save
-    unless password.blank?
-      self.salt = self.class.encrypt("Generate Salt", Time.now.to_f)
-      self.salted_password = self.class.encrypt(password, self.salt)
-    end
-  end
+  validates :name   ,:presence => true #,:uniqueness  => true
 
+  validates :password, :confirmation => true
+  #
+  #  validates_confirmation_of :password
+  #  validates_uniqueness_of :name
+  #
   def self.authorize(name, password)
     admin = find_by_name(name)
-    #    if admin && admin.salted_password == encrypt(password, admin.salt) && admin.is_active
     if admin && admin.salted_password == encrypt(password, admin.salt)
       return admin
     else
@@ -38,13 +34,19 @@ class Administrator < ActiveRecord::Base
     end
   end
 
+
+
+  def set_salted_password
+
+    unless password.blank?
+      self.salt = self.class.encrypt("Generate Salt", Time.now.to_f)
+      self.salted_password = self.class.encrypt(password, self.salt)
+    end
+  end
+
   protected
   def self.encrypt(string, salt)
     Digest::SHA1.hexdigest("#{string} - SHA1 - #{REST_AUTH_SITE_KEY} - #{salt}")
-  end
-
-  def password_changed?
-    !self.password.blank?
   end
 
 end

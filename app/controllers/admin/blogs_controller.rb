@@ -1,93 +1,73 @@
-class Admin::BlogsController < Admin::BasesController
-  # GET /blogs
-  # GET /blogs.xml
+class Admin::BlogsController < Admin::BaseController
+
+  before_filter do
+    @model_class = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.classify.constantize
+    @model_singularize = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize
+  end
+
   def index
-    @search = Blog.search(params[:search])
-    @blogs = @search.all
-    @blogs = @search.page(params[:page]).per(params[:per_page]||25)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @blogs }
+
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @search = @model.search(params[:search])
+
+    unless params[:keyword].blank?
+      keyword = split_keyword(params[:keyword])
+      keyword.each do |word|
+        @search.conditions.group do |group|
+          group.or_name_like = word
+        end
+      end
     end
+    @blogs =@search.page(params[:page] || 1).per(10)
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.xml
-  def show
-    @blog = Blog.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @blog }
-    end
-  end
-
-  # GET /blogs/new
-  # GET /blogs/new.xml
   def new
-    @blog = Blog.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @blog }
-    end
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @blog = @model.new
   end
 
-  # GET /blogs/1/edit
-  def edit
-    @blog = Blog.find(params[:id])
-  end
-
-  # POST /blogs
-  # POST /blogs.xml
   def create
-    @blog = Blog.new(params[:blog])
 
-#    render :update do |page|
-#        page.alert('sss')
-#      if @blog.save
-#        page.alert('sss')
-#      else
-#        page.alert(@blog.errors.full_messages.join("\n"))
-#      end
-#    end
-
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to admin_blogs_path }
-        format.xml  { render :xml => @blog, :status => :created, :location => @blog }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @blog.errors, :status => :unprocessable_entity }
-      end
+    @blog = @model_class.new(params[:blog])
+    if @blog.save
+      flash[:notice] = t('labels.created_success')
+      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+    else
+      render :action => :new
     end
   end
 
-  # PUT /blogs/1
-  # PUT /blogs/1.xml
+  def edit
+    @title = t('labels.manager', :model => @model_class.model_name.human)
+    @blog = @model_class.find(params[:id])
+  end
+
+  def show
+    @blog = @model_class.find(params[:id])
+    render :edit
+  end
+
   def update
-    @blog = Blog.find(params[:id])
-
-    respond_to do |format|
-      if @blog.update_attributes(params[:blog])
-        format.html { redirect_to admin_blogs_path }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @blog.errors, :status => :unprocessable_entity }
-      end
+    @blog = @model_class.find(params[:id])
+    #    params[:blog][:category] = params[:categories].join(",") unless params[:categories].blank?
+    if @blog.update_attributes(params[:blog])
+      flash[:notice] = t('labels.update_success')
+      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+    else
+      render :action => 'edit'
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.xml
   def destroy
-    @blog = Blog.find(params[:id])
+    @blog = @model_class.find(params[:id])
     @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to(blogs_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to( evel("admin_#{@model_singularize.tableize}_path")) }
+      format.xml { head :ok }
     end
   end
+
+
+
 end

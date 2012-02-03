@@ -1,26 +1,30 @@
-<div id="sub"><!-- サブメニュー -->
-  <div id="menu" class="clearfix"><!-- g_menu -->
-    <p><a href="JavaScript:onClick=Tree('display1');ImgC('img1');"><img src="/assets/admin/menu_icon_on.gif" width="36" height="36" alt="" id="img1" /><span><%= t("h2.administrators") %></span></a></p>
-    <ul id="display1" style="display:block">
-      <li><%= link_to  t('h2.administrators')   , admin_administrators_path %></li>
-    </ul>
-    <p><a href="JavaScript:onClick=Tree('display1');ImgC('img1');"><img src="/assets/admin/menu_icon_on.gif" width="36" height="36" alt="" id="img1" /><span><%= t("h2.management") %></span></a></p>
-    <ul id="display1" style="display:block">
-      <li><%= link_to  t('h2.categories')   , admin_categories_path %></li>
-      <li><%= link_to  t('h2.blogs')   , admin_blogs_path %></li>
-           <!--
-      <li>< %= link_to  t('h2.news')   , admin_news_index_path %></li>
-      <li>< %= link_to  t('h2.featured_news')   , admin_featured_news_index_path %></li>
-      <li>< %= link_to  t('h2.shoppings')   , admin_shoppings_path %></li>
-      <li>< %= link_to  t('h2.foods')   , admin_foods_path %></li>
-      <li>< %= link_to  t('h2.travel_plans')   , admin_travel_plans_path %></li>
+<!--LEFT NAVI-->
+<div class="LeftNavi">
+
+  <div class="ListArea">
+    <p class="Category"><%= t("h2.session_home") %></p>
+    <ul>
+
  
-      <li>< %= link_to  t('h2.traffics')   , admin_traffics_path %></li>
-      <li>< %= link_to  t('h2.stations')   , admin_stations_path %></li>
 
-      <li>< %= link_to  t('h2.contacts')   , admin_contacts_path %></li>
-                 -->
+      <li class="Level1 <%= 'current' if controller_name == 'administrator' %>"><%= link_to t('labels.manager', :model => News.model_name.human), admin_news_index_path, :class => "l1" %>
+        <% if  ['news'].include?(controller_name) %>
+          <ul class="Level2">
+            <li class=" <%= (action_name=='edit'||action_name=='index')&& controller_name=='news' ? 'on' :'' %>">
+              <%= link_to t('labels.manager', :model => Admistrator.model_name.human), admin_administrator_path %>
+            </li>
+            <li class="last <%= action_name=='new'&& controller_name=='news' ? 'on' :'' %>">
+              <%= link_to t('labels.add_manager', :model => Admistrator.model_name.human), new_admin_administrator_path %>
+            </li>
+          </ul>
+        <% end %>
+      </li>
+
+
+
+
+
+
     </ul>
-  </div><!-- /g_menu -->
-</div><!-- /sサブメニュー -->
-
+  </div>
+</div>
