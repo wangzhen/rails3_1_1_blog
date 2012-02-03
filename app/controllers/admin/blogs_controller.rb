@@ -1,4 +1,4 @@
-class Admin::BlogsController < Admin::BaseController
+class Admin::BlogsController < Admin::BasesController
 
   before_filter do
     @model_class = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.classify.constantize
@@ -8,7 +8,7 @@ class Admin::BlogsController < Admin::BaseController
   def index
 
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @search = @model.search(params[:search])
+    @search = @model_class.search(params[:search])
 
     unless params[:keyword].blank?
       keyword = split_keyword(params[:keyword])
@@ -23,7 +23,7 @@ class Admin::BlogsController < Admin::BaseController
 
   def new
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @blog = @model.new
+    @blog = @model_class.new
   end
 
   def create
@@ -31,7 +31,7 @@ class Admin::BlogsController < Admin::BaseController
     @blog = @model_class.new(params[:blog])
     if @blog.save
       flash[:notice] = t('labels.created_success')
-      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+      redirect_to eval("admin_#{@model_singularize.tableize}_path")
     else
       render :action => :new
     end
@@ -52,7 +52,7 @@ class Admin::BlogsController < Admin::BaseController
     #    params[:blog][:category] = params[:categories].join(",") unless params[:categories].blank?
     if @blog.update_attributes(params[:blog])
       flash[:notice] = t('labels.update_success')
-      redirect_to evel("admin_#{@model_singularize.tableize}_path")
+      redirect_to eval("admin_#{@model_singularize.tableize}_path")
     else
       render :action => 'edit'
     end
@@ -63,7 +63,7 @@ class Admin::BlogsController < Admin::BaseController
     @blog.destroy
 
     respond_to do |format|
-      format.html { redirect_to( evel("admin_#{@model_singularize.tableize}_path")) }
+      format.html { redirect_to( eval("admin_#{@model_singularize.tableize}_path")) }
       format.xml { head :ok }
     end
   end
