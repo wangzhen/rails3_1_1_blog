@@ -19,3 +19,8 @@ set :scm_user, "kembo"
 #set :scm_password do Capistrano::CLI.password_prompt('SVN Password: ') end
 set :scm_password, 'fjwoe83nf'
 #set :scm_prefer_prompt, true
+#git remote add origin git@github.com:wangzhen/test.git
+#git add days.txt
+#git status
+#git commit -m "Refactor to simplify" some-file
+#git push -u origin master

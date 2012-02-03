@@ -1,0 +1,282 @@
+@charset "utf-8";
+/* CSS Document */
+body a{outline:none;blr:expression(this.onFocus=this.blur());}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;} 
+table {border-collapse:collapse;   border-spacing:0;} 
+fieldset,img {border:0;} 
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;} 
+dl, dt, dd, img, ul, ol, li {margin:0;padding:0; border:0;list-style:none;}
+caption,th {text-align:left;} 
+h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;} 
+q:before,q:after {content:'';} 
+abbr,acronym {border:0;} 
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+a img {border:none;}
+.hide{visibility:hidden;}
+.clear{ clear:both;}
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
+/*img, div, input {behavior: url("iepngfix.htc");}*/
+body { font-family:Arial,"Microsoft YaHei"; font-size:12px; background:#171717;}
+
+/*COMMON*/
+.Wrapper{ width:1000px; margin:0 auto; background:url(/images/common/body_bg.gif) repeat;}
+.FixArea{ position:fixed; background:url(/images/common/body_bg.gif) repeat; z-index:79; width:1000px;}
+.Header{ overflow:hidden; width:1000px; margin:0 auto; padding:3px 0 0 0;}
+.Header #Logo{ float:left; _display:inline; margin:0 0 0 28px;}
+.Header #Logo a{ width:236px; height:98px; display:block; text-indent:-9999px; background:url(/images/common/logo.png) no-repeat;}
+.Header .RightArea{ float:right; _display:inline; margin:10px 24px 0 0;}
+.Header .RightArea .Join{ float:right; _display:inline; margin:0 0 0 19px; padding:27px 0 0 0;}
+.Header .RightArea .Login{ float:right; _display:inline; margin:0 0 0 10px; padding:27px 0 0 0;}
+.Header .RightArea .Login span{ display:block; margin:5px 0 0 2px;}
+.Header .RightArea .Login span a{ color:#fc0148; font-size:11px; text-decoration:underline;}
+.Header .RightArea .Login span a:hover{ text-decoration:none;}
+.Header .RightArea .InputForm{ float:right; _display:inline; margin:7px 0 0 18px;}
+.Header .RightArea .InputForm h3{ float:left; _display:inline; margin:0 15px 0 2px; _padding:4px 0 0 0;}
+.Header .RightArea .InputForm h4{ float:left; color:#FFF; font-size:11px; margin:0 0 7px 0; _margin:0;}
+.Header .RightArea .InputForm h4 span{ padding:0 3px 0 0; float:left;}
+.Header .RightArea .InputForm h4 label{ float:left; padding:0; _padding:3px 0 0 0;}
+.Header .RightArea .InputForm input.IdPw{ background:url(/images/common/inputarea.png) no-repeat; border:none; padding:3px 3px 1px 3px; height:17px; width:138px;
+font-family:Arial; color:#adaaaa; font-size:11px; display:block; margin:7px 0 0 0; _margin:3px 0 0 0; clear:both;}
+#ckepop{ float:right; _display:inline; color:#fff; padding:60px 0 0 0; _padding:62px 0 0 0; white-space:nowrap;}
+#ckepop a{ color:#fff;}
+#NaviArea{ clear:both; margin:14px 0 0 0; z-index:9; width:1000px;}
+#NaviArea ul{ overflow:hidden; background:url(/images/common/navi_bg.jpg) repeat-x; height:41px; clear:both; padding:0 0 0 25px;}
+#NaviArea ul li{ float:left; _display:inline; border-right:1px solid #000; _position:relative; }
+#NaviArea ul li.end{ border:none;}
+#NaviArea ul li ul{ position:absolute; width:135px; top:115px; left:433px; z-index:10; background:none; overflow:auto; height:auto; padding:0; _top:0; _left:0; }
+#NaviArea ul li ul li{ font-size:0; line-height:1%; float:none; border:none;}
+#vtip { display: none; position: absolute; padding: 10px; left: 5px; font-size: 0.8em; background-color:#fc3168; border: 1px solid #fff; font-weight:bold; 
+-moz-border-radius:5px; -webkit-border-radius:5px; z-index:9999;/* filter: Alpha(Opacity=10, Style=0); opacity: 0.70;*/ color:#FFF; }
+.FootNavi{ overflow:hidden; line-height:30px; background:#535353; border-bottom:1px solid #949494; clear:both; margin:0 0 1px 0;}
+.FootNavi ul{ float:left; _display:inline; margin:0 0 0 24px; white-space:nowrap; overflow:hidden;}
+.FootNavi ul li{ float:left; _display:inline; color:#FFF; margin:0 15px 0 0; white-space:nowrap;}
+.FootNavi ul li a{ color:#FFF; white-space:nowrap;}
+.FootNavi ul li a:hover{ text-decoration:underline;}
+.FootNavi .totop{ float:right; _display:inline; margin:0 20px 0 0; padding:6px 0 0 0;}
+.LinkArea{ padding:8px 23px 11px 23px; overflow:hidden; background:#FFF; clear:both;}
+.LinkArea li{ float:left; _display:inline; margin:0 27px 0 0;}
+.LinkArea li.dotline{ border-left:1px dotted #535353; height:47px; width:1px; margin:5px 26px 0 0;}
+.LinkArea li.line{ border-right:1px solid #535353; height:47px; width:1px; margin:5px 26px 0 0;}
+.Footer{ text-align:right; padding:6px;}
+a.anchor{ position:absolute;}
+#toppage{padding:192px 0 18px 0; _padding:11px 0 18px 0;}
+
+/*TOP*/
+.NewsBar{ border-top:1px solid #555555; border-bottom:1px solid #555555; line-height:21px; height:21px; overflow:hidden; color:#dfdede; clear:both; font-size:11px;}
+.ContentsArea{ padding:230px 0 200px 0; overflow:hidden; _padding:0 0 20px 0;}
+.ContentsArea .Weibo{float:left; _display:inline; width:306px; height:161px; background:url(/images/top/top_weibo_bg.png) no-repeat; margin:18px 17px 0 0; overflow:hidden;}
+.ContentsArea .Weibo .soon{ padding:74px 0 0 100px;}
+.ContentsArea .Weibo .Info{ margin:10px 12px 0 15px; overflow:hidden; padding:0 0 14px 0; border-bottom:1px dotted #6a6a6a; _height:48px; _padding:10px 0 14px 0}
+.ContentsArea .Weibo .Info .UserIcon{ float:left; _display:inline; border:1px solid #c6c6c6; width:48px; height:48px; margin:0 12px 0 0;}
+.ContentsArea .Weibo .Info .UserIcon img{ width:48px; height:48px;}
+.ContentsArea .Weibo .Info .Section{ float:left; _display:inline;}
+.ContentsArea .Weibo .Info .Section h4{ padding:6px 0 0 0; font-weight:bold;}
+.ContentsArea .Weibo .Info .Section p{ padding:10px 0 0 0;}
+.ContentsArea .Weibo .Info .Section p img{ float:left; _display:inline;}
+.ContentsArea .Weibo .Info .Section p span{ float:left; _display:inline; padding:1px 0 0 0;}
+.ContentsArea .Weibo .Info .Section p span a{ color:#fe0970; margin:0 0 0 16px; text-decoration:none;}
+.ContentsArea .Weibo .Info .Section p span a:hover{ text-decoration:underline;}
+.ContentsArea .Weibo .contents{ margin:10px 12px 0 15px; clear:both; line-height:18px; font-size:11px;}
+.ContentsArea .Weibo .From{ overflow:hidden; margin:10px 12px 0 15px;}
+.ContentsArea .Weibo .From li{ float:left; _display:inline; margin:0 20px 0 0; line-height:20px;}
+.ContentsArea .Weibo .From li span{ color:#3896d3;}
+.ContentsArea .BlockA{ overflow:hidden; padding:0 0 0 24px;}
+.ContentsArea .BlockA .KV{ float:left; _display:inline; padding:14px 0 0 0; position:relative; width:628px; margin:0 18px 0 0;}
+.ContentsArea .BlockA .KV ul.slides { overflow:hidden; width:628px; height:421px; position: relative;}
+.ContentsArea .BlockA .KV ul.slides li{ display:block; position: absolute;top: 0;left: 0;overflow: hidden;}
+.ContentsArea .BlockA .KV ul.slides li img{display: block;}
+.ContentsArea .BlockA .KV ul.slides li.active { display: block; position: relative; }
+.ContentsArea .BlockA .KV span.Icon{ position:absolute; top:0; right:-13px; z-index:5;}
+.ContentsArea .BlockA .KV ul.pager { position:absolute; bottom:10px; right:10px; overflow:hidden;}
+.ContentsArea .BlockA .KV ul.pager li { margin:0 5px; float:left; display:inline;}
+.ContentsArea .BlockA .KV ul.pager li a {display: block;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
+.ContentsArea .BlockA .KV ul.pager li a:hover{ text-decoration:none;}
+.ContentsArea .BlockA .KV ul.pager li a span {display: block;overflow: hidden;background: #c0c0c0; 
+-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px; width:10px; height:15px; color:#FFF; padding:3px; text-align:center;}
+.ContentsArea .BlockA .KV ul.pager li.active a span { background: #da3e6c; }
+.ContentsArea .BlockA .TopNews{ padding:14px 0 0 0; position:relative;float:left; _display:inline; width:306px;}
+.ContentsArea .BlockA .TopNews .Inner{ width:280px; height:204px; padding:19px 13px; background:url(/images/top/top_news_bg.png) no-repeat; _background:url(/images/top/top_news_bg.png) no-repeat 13px 0; _width:295px;}
+.ContentsArea .BlockA .TopNews span.Icon{ position:absolute; top:0; right:-14px; _right:0; z-index:1;}
+.ContentsArea .BlockA .TopNews .Inner h3{}
+.ContentsArea .BlockA .TopNews .Inner .PicArea{ margin:10px 0 0 0;}
+.ContentsArea .BlockA .TopNews .Inner .TxtArea{ margin:10px 0 0 0; line-height:20px; _margin:10px 10px 0 0;}
+.ContentsArea .BlockA .TopNews .Inner .TxtArea span{ color:#f9257c; margin:0 5px 0 0;}
+.ContentsArea .BlockA .TopNews .Inner .TxtArea a{ color:#f9257c; white-space:nowrap; margin:0 0 0 5px; text-decoration:underline;}
+.ContentsArea .BlockA .TopNews .Inner .TxtArea a:hover{ text-decoration:none;}
+.ContentsArea .BlockA .TopNews .Inner .TxtArea strong{ color:#f9257c; white-space:nowrap;}
+.ContentsArea .BlockB{ overflow:hidden; clear:both; padding:8px 0 0 24px;}
+.ContentsArea .BlockB .Jpop{ width:320px; height:316px; position:relative; padding:10px 0 0 0; margin:0 3px 0 0; float:left; _display:inline; background:url(/images/top/top_jpop_bg.png) no-repeat left top;}
+.ContentsArea .BlockB .Jpop span.Icon{ position:absolute; top:0; right:0;}
+.ContentsArea .BlockB .Jpop img.pic{ display:block;}
+.ContentsArea .BlockB .Jpop p{ margin:0 20px; line-height:15px; font-size:11px;}
+.ContentsArea .BlockB .Jpop p a{ color:#000;}
+.ContentsArea .BlockB .Jpop p a:hover{ text-decoration:underline;}
+.ContentsArea .BlockB .Jpop p strong{ color:#F9257C; font-weight:bold;}
+.ContentsArea .BlockB .JpopV{ width:320px; height:316px; background:url(/images/top/top_jpopv_bg.png) no-repeat; position:relative; padding:10px 0 0 0; margin:0; float:left; _display:inline;}
+.ContentsArea .BlockB .JpopV span.Icon{ position:absolute; top:0; right:0;}
+.ContentsArea .BlockB .JpopV span.Vicon{ position:absolute; top:100px; left:127px; width:50px; height:50px;}
+.ContentsArea .BlockB .JpopV img.pic{ display:block; margin:25px 0 0 15px;}
+.ContentsArea .BlockB .JpopV p.title{ margin:15px 20px 0 20px; line-height:17px; font-size:14px; font-weight:bold;}
+.ContentsArea .BlockB .JpopV p.subtitle{ margin:10px 20px 0 20px; line-height:15px; font-size:12px;}
+.ContentsArea .BlockB .JpopV p.txt{ margin:5px 25px 5px 20px; line-height:15px; font-size:11px;}
+.ContentsArea .BlockB .JpopV p.txt strong{ color:#F9257C; font-weight:bold;}
+.ContentsArea .BlockC{ overflow:hidden; margin:7px 0 0 0;}
+.ContentsArea .BlockC .Monthly{ width:539px; height:259px; position:relative; margin:0 5px 0 24px; _margin:7px 0 0 31px; background:url(/images/top/top_monthly_bg.png) no-repeat left;
+ padding:22px 0 0 13px; _padding:22px 0 0 6px; float:left; _display:inline;}
+.ContentsArea .BlockC .Monthly span.Icon{ position:absolute; top:0; right:0;}
+.ContentsArea .BlockC .Monthly .pic{ float:left; _display:inline; margin:0 15px 0 0;}
+.ContentsArea .BlockC .Monthly .txt{ float:left; _display:inline; width:247px;}
+.ContentsArea .BlockC .Monthly .txt h2{ color:#f39438; font-weight:bold; font-size:36px; letter-spacing:4px; _letter-spacing:2px;}
+.ContentsArea .BlockC .Monthly .txt h3{ color:#010101; font-weight:bold; font-size:12px; margin:5px 25px 0 0; line-height:17px;}
+.ContentsArea .BlockC .Monthly .txt h4{ color:#fea200; font-size:18px; margin:10px 0 0 0;  }
+.ContentsArea .BlockC .Monthly .txt h5{ color:#303030; font-size:24px; margin:0 0 0 0;}
+.ContentsArea .BlockC .Monthly .txt .eng{ color:#303030; font-size:11px; margin:10px 0 0 0;}
+.ContentsArea .BlockC .Monthly .txt .name{ color:#fc3168; font-size:28px; margin:0 0 0 0; font-weight:bold; letter-spacing:4px; _letter-spacing:2px;}
+.ContentsArea .BlockC .Monthly .txt .des{ color:#303030; font-size:11px; margin:5px 0 0 0; line-height:16px;}
+.ContentsArea .BlockC .RightZone{ margin:0; padding:0; _padding:7px 0 0 5px; float:left; _display:inline;}
+.ContentsArea .BlockC .BbsArea{ background:url(/images/top/top_bbs_bg.png) no-repeat left; width:407px; height:157px; position:relative;}
+.ContentsArea .BlockC .BbsArea span.Icon{ position:absolute; top:0; right:0;}
+.ContentsArea .BlockC .BbsArea .soon{ padding:75px 0 0 140px;}
+.ContentsArea .BlockC .Notice{ position:relative; width:391px; height:90px; background:url(/images/top/top_notice_bg.png) no-repeat left; margin:11px 0 0 0; padding:23px 0 0 16px; _padding:25px 0 0 0px; _width:407px;}
+.ContentsArea .BlockC .Notice span.Icon{ position:absolute; top:0; right:0;}
+.ContentsArea .BlockC .Notice .des{ _margin:0 0 0 16px;}
+.ContentsArea .BlockC .Notice h2{ color:#000; font-weight:bold; font-size:28px; letter-spacing:2px; margin:5px 0; _margin:6px 0 6px 16px;}
+.ContentsArea .BlockC .Notice .click a{ color:#fe0640; _margin:0 0 0 16px;}
+.ContentsArea .BlockD{ overflow:hidden; clear:both; margin:16px 0 0 0; padding:0 0 0 24px; border-top:1px solid #545454;}
+
+/*MONTHLY*/
+.AnchorArea{ text-align:right; margin:20px 24px 10px 0;}
+.AnchorArea a{ padding:0 3px; border:1px solid #FFF; margin:0 3px; color:#FFF; text-decoration:none;}
+.MonthlyKV{width:952px; margin:0 24px 0 24px; font-size:0; line-height:1%;}
+.MonthlyContents{ margin:34px 0 0 0; padding:34px 24px 5px 24px; overflow:hidden; border-top:1px solid #555555;}
+.MonthlyContents .LeftArea{ float:left; _display:inline; width:587px; margin:0 30px 0 0;}
+.MonthlyContents .LeftArea h2{ font-weight:bold; font-size:15px; color:#f3fe00; margin:0 0 30px 0;}
+.MonthlyContents .LeftArea dl{ padding:0 0 17px 0; overflow:hidden; border-bottom:1px solid #555555; margin:0 0 17px 0; height:auto; position:relative; _position:static;}
+.MonthlyContents .LeftArea dl:after{clear: both;content: "";display: block;}
+.MonthlyContents .LeftArea dl dt{ float:left; margin:0 25px 0 0;}
+.MonthlyContents .LeftArea dl dd{ color:#FFF; padding:10px 0 0 0;}
+.MonthlyContents .LeftArea dl dd h3{ margin:0 0 10px 0; line-height:30px; font-size:20px; font-weight:bold; letter-spacing:1px;}
+.MonthlyContents .LeftArea dl dd p{ line-height:22px; margin:0 0 15px 0;}
+.MonthlyContents .LeftArea .more{ color:#f6ff00; font-size:14px; text-align:right; margin:14px 0 0 0;}
+.MonthlyContents .LeftArea .more a{ color:#f6ff00;}
+.MonthlyContents .RightArea{ width:335px; float:left; _display:inline; }
+.MonthlyContents .RightArea h2{ border-bottom:2px solid #f6ff00; padding:0 0 8px 0; font-size:0; line-height:1%; margin:0 0 16px 0;}
+.MonthlyContents .RightArea dl{ padding:0 0 11px 0; overflow:hidden; border-bottom:1px dotted #fff; margin:0 0 11px 0;}
+/*.MonthlyContents .RightArea dl dt:after{clear: both;content: "";display: block;}*/
+.MonthlyContents .RightArea dl dt{ float:left; margin:0 21px 0 0; width:93px;}
+.MonthlyContents .RightArea dl dd{ color:#FFF; padding:2px 0 0 0; float:left; width:220px;}
+.MonthlyContents .RightArea dl dd h3{ margin:0 0 5px 0; line-height:20px; font-size:16px; font-weight:bold; letter-spacing:1px; font-family:"MS PGothic",Arial;}
+.MonthlyContents .RightArea dl dd h4{ margin:0 0 5px 0; line-height:14px; font-size:11px;}
+.MonthlyContents .RightArea dl dd p{ line-height:18px;}
+.MonthlyContents .RightArea .more{ color:#f6ff00; font-size:14px; text-align:right; margin:14px 0 0 0;}
+.MonthlyContents .RightArea .more a{ color:#f6ff00;}
+
+
+/*PROGRAM*/
+#programpage{padding:195px 0 18px 0; _padding:11px 0 18px 0;}
+.ProgramKV{ margin:0 0 0 102px; padding:0 0 17px 0; border-bottom:1px dotted #FFF; width:810px;}
+.IntroArea{ width:810px; margin:17px 0 10px 102px; overflow:hidden; clear:both;}
+.IntroArea .Person{ width:575px; height:237px; float:left; _display:inline; margin:0 18px 0 0;}
+.IntroArea .schedule{ float:left; _display:inline; width:177px; height:177px; background:url(/program/images/schedule.png) no-repeat; padding:30px 20px;}
+.IntroArea .schedule h3{ font-weight:bold; font-size:16px; margin:0 0 5px 0;}
+.IntroArea .schedule p{ margin:0 0 15px 0;}
+.IntroArea .schedule p a{ padding:3px 0 0 0; color:#c40045; display:block;}
+
+/*CULTURE*/
+#culturepage{padding:220px 0 40px 0; _padding:11px 0 18px 0; background:#FFF !important;}
+.FocusAnchor{ padding:15px 0 0 35px; background:#FFF;}
+.FocusAnchor img{ margin:0 10px 0 0; float:left;}
+.FocusAnchor a{ line-height:17px; font-weight:bold; margin:0 5px; text-decoration:underline; color:#c40045;}
+.FocusAnchor a:hover{ text-decoration:none;}
+.CultureKV{ overflow:hidden; padding:0 0 17px 23px; border-bottom:1px solid #a3a3a3;}
+.CultureKV .PicArea{ float:left; _display:inline; margin:0 14px 0 0; width:658px; height:385px;}
+.CultureKV .IndexArea{ float:left; _display:inline; width:281px; height:385px; background:url(/jpop/images/culture_index_bg.jpg) no-repeat;}
+.CultureKV .IndexArea ul{ padding:25px 20px 0 67px; _padding:50px 20px 0 67px;}
+.CultureKV .IndexArea ul li{ margin:22px 0 0 0; height:64px;}
+.CultureKV .IndexArea ul li .coming{ padding:25px 0 0 0; _padding:23px 0 0 0;}
+.CultureKV .IndexArea ul li h4{ color:#251e1c; margin:0 0 5px 0;}
+.CultureKV .IndexArea ul li h4 span.vol{ color:#5176fd; margin:0 10px 0 0; font-weight:bold;}
+.CultureKV .IndexArea ul li h4 span.up{ color:#ff005a; margin:0 0 0 10px; font-weight:bold;}
+.CultureKV .IndexArea ul li h3{ font-size:14px; font-weight:bold; color:#251e1c; letter-spacing:1px; line-height:16px;}
+.CultureKV .IndexArea ul li h3 a{ color:#251e1c; text-decoration:none;}
+.CultureKV .IndexArea ul li h3 a:hover{ color:#ff005a;}
+.CultureVol{ clear:both; padding:17px 0 0 23px; margin:0 0 30px 0; position:relative;}
+.FocusArea{ padding:0 25px;}
+.FocusArea .FocusRanking{ overflow:hidden; border-top:1px dotted #555555; margin:0 0 27px 0; padding:25px 25px 0 25px; position:relative; _position:static;}
+.FocusArea .FocusRanking.first{ border:none;}
+.FocusArea .FocusRanking:after{clear: both;content: "";display: block;}
+.FocusArea .FocusRanking img.L{ float:left; margin:0 36px 0 0;}
+.FocusArea .FocusRanking img.R{ float:right; margin:0 0 0 36px;}
+.FocusArea .FocusRanking h2{ padding:9px 0 15px 0;}
+.FocusArea .FocusRanking p{ line-height:24px;}
+.FocusArea .FocusRanking sup{ color:#c40045;}
+.FocusArea .FocusRanking h4{ color:#c40045; margin:15px 0 5px 0; font-weight:bold;}
+.FocusArea .FocusRanking p.pink{ color:#c40045; line-height:17px;}
+.FocusArea .FocusRanking p.pink a{ color:#333; text-decoration:underline;}
+.FocusArea .FocusRanking p.pink strong{ color:#888; font-weight:normal;}
+.FocusArea .FocusRanking p.link{ color:#c40045; font-weight:bold; margin:25px 0 0 0;}
+.FocusArea .FocusRanking p.link a{ color:#c40045;}
+.CultureArchive{ border-top:1px solid #a3a3a3; clear:both; padding:10px 0 0 0;}
+.CultureArchive h3{ text-align:center;}
+.CultureArchive .PhotoArea{ width:740px; overflow:hidden; margin:10px auto 0 auto;}
+.CultureArchive .PhotoArea ul{ float:left; _display:inline; overflow:hidden; margin:0 10px; width:648px; height:98px;}
+.CultureArchive .PhotoArea ul li{ float:left; _display:inline; margin:0 5px;}
+
+/*NEXT*/
+.NextLeft{ float:left; display:inline; margin:0 11px 17px 24px; position:relative; width:510px; height:429px; background:url(/next/images/next_bg1.png) no-repeat; padding:12px 0 0 0;}
+.NextLeft span.Icon{ position:absolute; top:0; right:0;}
+.NextLeft img.Pic{ display:block; margin:0;}
+.NextLeft h3{ background:url(/next/images/h3_title_next.jpg) no-repeat; margin:22px 0 0 28px; width:445px; text-align:right; padding:3px 0 0 0;}
+.NextLeft h2{ margin:10px 30px 0 28px; letter-spacing:2px; font-size:20px; font-weight:bold;}
+.NextLeft p{ margin:10px 30px 0 28px; line-height:22px;}
+.NextRight{ float:left; _display:inline;}
+.NextRight .ComingSoon{ margin:0; padding:12px 0 0 0; width:432px;}
+.NextRight .Next2{ clear:both; position:relative; background:url(/next/images/next_bg2.png) no-repeat; height:205px; width:432px; margin:8px 0 0 0; padding:11px 11px 0 0;}
+.NextRight .Next2 span.Icon{ position:absolute; top:0; right:0;}
+.NextRight .Next2 img.Pic{ float:right;}
+.NextRight .Next2 .txt{ float:left; _display:inline; margin:18px 0 0 18px;}
+.NextRight .Next2 h2{ margin:10px 0 0 0; letter-spacing:2px; font-size:20px; font-weight:bold;}
+.NextRight .Next2 p{ margin:15px 0 0 0; line-height:22px; width:200px;}
+
+/*NEWS*/
+.NewsOuter{ margin:0 0 0 24px; position:relative; width:964px;}
+.NewsOuter span.Icon{ position:absolute; top:0; right:0; z-index:9;}
+.NewsInner{ background:url(/images/news/left_bg_bottom.png) no-repeat left bottom; _background:url(/images/news/left_bg_bottom.png) no-repeat 24px bottom; overflow:hidden; width:952px; _width:988px;}
+.NewsInner .LeftDate{ width:200px; margin:0 20px 35px 0; _margin:0 20px 35px 24px; float:left; _display:inline; background:#FFF;}
+.NewsInner .LeftDate h3{ margin:0 0 15px 20px;}
+.NewsInner .LeftDate li{ background:url(/images/news/icon1.png) no-repeat center left; padding:0 0 0 21px; border-bottom:1px dotted #f01d7c; line-height:30px; margin:0 20px 0 20px;}
+.NewsInner .LeftDate li a{ color:#f01d7c;}
+.NewsInner .NewsContents{ float:left; _display:inline;}
+.NewsInner .NewsContents .list{ width:731px; margin:20px 0 0 0;}
+.NewsInner .NewsContents p.waku{ font-size:0; line-height:1%;}
+.NewsInner .NewsContents ul{ padding:0 47px 0 35px; background:#FFF;}
+.NewsInner .NewsContents li{ border-bottom:1px dotted #CCC; padding:15px 0 8px 0;}
+.NewsInner .NewsContents li h4{ background:url(/images/news/icon2.png) no-repeat; padding:0 0 0 30px; line-height:20px; color:#f01d7c; font-weight:bold; font-size:14px;}
+.NewsInner .NewsContents li p{ font-size:14px; line-height:18px; margin:5px 0 0 0;}
+.NewsInner .NewsContents li p a{ color:#333;}
+.NewsInner .NewsContents li p a:hover{ color:#f01d7c; text-decoration:underline;}
+.NewsInner .NewsContents .Page{ text-align:right; padding:20px 47px 0 35px; line-height:19px; background:#FFF;}
+.NewsInner .NewsContents .Page a{ margin:0 5px; color:#888;}
+.NewsInner .NewsContents .Page a:hover{ color:#f01d7c;}
+.NewsInner .NewsContents .Page a.on{ color:#f01d7c; font-weight:bold;}
+.NewsInner .NewsContents .DetailArea{ padding:0 47px 0 35px; background:#FFF;}
+.NewsInner .NewsContents .DetailArea h5{ color:#999; margin:0 0 5px 0;}
+.NewsInner .NewsContents .DetailArea h2{ font-size:14px; color:#f01d7c; font-weight:bold; line-height:18px; margin:0 0 20px 0;}
+.NewsInner .NewsContents .DetailArea .FCK{ height:500px; background:#cecece;}
+.NewsInner .NewsContents .DetailArea .ShareArea{ margin:15px 0 0 0; clear:both;}
+.NewsInner .NewsContents .DetailArea .back{ text-align:right; margin:15px 0 0 0;}
+.NewsInner .NewsContents .DetailArea .back a{ color:#f01d7c;}
+.NewsInner .NewsContents .DetailArea .back a:hover{ text-decoration:underline;}

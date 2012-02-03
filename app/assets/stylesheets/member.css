@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*login_index.html*/
+.login_content{ width:800px; color:#dfdede; padding-top:43px; padding:43px 0 80px 160px; overflow:hidden;}
+ul.login_left{ width:152px; float:left; padding-top:20px;}
+ul.login_left li{ line-height:32px;}
+ul.login_left li a{color:#fff;}
+ul.login_left li a:hover{color:#ff0072; text-decoration:none;}
+ul.login_left li.current{color:#ff0072;}
+ul.login_left li.current a{color:#ff0072;}
+ul.login_left li.current a:hover{color:#ff0072;}
+.login_right{ float:left; border-left:1px #fff dashed; height:auto; margin-top:30px; font-size:11px;}
+.login_right span{padding-left:102px; float:left;  }
+.login_input{ background:url(/images/member/input1.png) no-repeat; border:none; padding:3px 3px 1px 3px; height:21px; width:190px;
+font-family:Arial; color:#adaaaa; font-size:11px; }
+.login_icon{ margin:4px 0 0 15px; width:98px; height:40px;}
+.left_djk{float:left; padding-top:11px;_padding-top:6px;}
+.left_font{float:left;padding:9px 0 0 5px;padding:11px 0 0 5px\9;_padding:10px 0 0 5px;}
+.left_red{color:#ed0748; padding-top:9px;}
+.left_red a{color:#ed0748;}
+.left_red a:hover{color:#ed0748;}
+.login_botline{border-bottom:1px #555 solid; margin:30px 0 0 87px;_margin:13px 0 0 87px; float:left; clear:both;display:inline; width:422px;}
+.login_bot{ clear:both; font-size:14px; width:422px; padding:30px 0 0 39px;}
+.login_bot_lfont{ float:left; padding:10px 26px 0 134px;}
+.login_bot_icon{ float:left;}
+
+
+/*login_index2.html*/
+.login2_cont{ padding-left:39px;}
+.login_img{ padding:29px 0 10px 0;}
+.login_list{ width:488px; line-height:50px; text-align:right; font-size:12px;}
+.login_list td{ border-top:1px #555 solid;}
+.login_input2{ background:url(/images/member/input2.png) no-repeat; border:none; height:21px; width:353px; line-height:21px; padding:1px 0 0 4px;
+font-family:Arial; color:#adaaaa;  }
+.font_light{ line-height:12px; color:#8a8a8a; border:none; text-align:left; padding:10px 0 10px 10px;}
+.font_red{ color:#d80f69;}
+.font_light2{ line-height:16px; color:#dfdede;  text-align:left; width:300px; padding:10px 0 10px 0;}
+
+/*login_index3.html*/
+.login3_font{ padding-top:16px;}
+.login3_title{ font-size:18px; font-weight:bold; color:#fff;}
+.login3_txt{ line-height:22px; font-size:12px;width:235px; padding-top:20px; color:#dfdede;}
+.login3_txt a{color:#dfdede;}
+.login3_txt a:hover{color:#dfdede;}
+
+
+
+/*disclaimers.html privacy.html*/
+.bottom { line-height:20px; padding:0 30px 20px 30px; width:940px; }
+.bottom .title { display:block; clear: both; font-size:30px; padding-top:16px;  color:#fff;}
+.bottom p {margin: 1.12em 0px; color:#fff;}
+.bottom p a{color:#F3FE00;}
+.bottom p a:hover{color:#F3FE00;}
+.bottom strong{ font-weight:bold; }
