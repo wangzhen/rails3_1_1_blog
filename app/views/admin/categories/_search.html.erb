@@ -1,27 +1,12 @@
-<%= form_for @search, :url => admin_categories_path(:category => params[:search]),
-  :html => {:id => 'search'} do |f| %>
-  <table>
+<%= form_for  @search, :url => eval("admin_#{controller_name}_path(:search => params[:search])"),
+  :html => {:id => 'search'} do |f|%>
 
+    <div class="SearchArea2">
+      <p class="title">
+        关键字
+        <%= text_field_tag :keyword ,params[:keyword], :class => "typeA"  %>
+      </p>
 
-      <tr>
-        <td style="width:100px;text-align:right;">
-          <span><%= Category.human_attribute_name("name") %>:</span>
-        </td>
-        <td> <%= f.text_field :name_contains ,:size => 20 %></td>
-
-        <td style="width:100px;text-align:right;">
-          <span><%= t("labels.keyword") %>:</span>
-        </td>
-        <td>
-          <%= text_field_tag :keyword ,params[:keyword],:size => 20 %>
-        </td>
-        <td  style="width:150px;text-align:right;">
-        </td>
-        <td  style="width:150px;text-align:right;">
-          <%= hidden_field_tag :per_page, params[:per_page] || 50 %>
-          <%= f.submit t('labels.search'), :class => "btn_s float_right" %></td>
-      </tr>
-  </table>
-
-  <br class="clear"/>
-<% end %>
+      <%= f.submit t('labels.search'), :class => "BottomW2" %>
+    </div>
+<%- end %>

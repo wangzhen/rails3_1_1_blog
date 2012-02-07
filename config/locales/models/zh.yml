@@ -31,6 +31,8 @@ zh:
 
     models:
       administrator: "管理员"
+      blog: "博客"
+      category: "博客分类"
 
 
     attributes:

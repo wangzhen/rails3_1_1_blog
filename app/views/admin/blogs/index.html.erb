@@ -5,9 +5,9 @@
 
     <p class="btnW5"><%= link_to t('labels.add_manager', :model => ''), eval("new_admin_#{controller_name.singularize}_path") %></p>
   </div>
-
   <%= render :partial => "/admin/shared/notice" %>
 
+  <%= render :partial => "search" %>
 
   <!--OPERATION-->
   <%= render :partial => "/admin/shared/paginate", :locals => {:objects => instance_variable_get("@#{controller_name}")} %>

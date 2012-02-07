@@ -18,18 +18,18 @@ class Admin::CategoriesController < Admin::BasesController
         end
       end
     end
-    @blogs =@search.page(params[:page] || 1).per(10)
+    @categories =@search.page(params[:page] || 1).per(10)
   end
 
   def new
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @blog = @model_class.new
+    @category = @model_class.new
   end
 
   def create
 
-    @blog = @model_class.new(params[:blog])
-    if @blog.save
+    @category = @model_class.new(params[:category])
+    if @category.save
       flash[:notice] = t('labels.created_success')
       redirect_to eval("admin_#{@model_singularize.tableize}_path")
     else
@@ -39,18 +39,18 @@ class Admin::CategoriesController < Admin::BasesController
 
   def edit
     @title = t('labels.manager', :model => @model_class.model_name.human)
-    @blog = @model_class.find(params[:id])
+    @category = @model_class.find(params[:id])
   end
 
   def show
-    @blog = @model_class.find(params[:id])
+    @category = @model_class.find(params[:id])
     render :edit
   end
 
   def update
-    @blog = @model_class.find(params[:id])
-    #    params[:blog][:category] = params[:categories].join(",") unless params[:categories].blank?
-    if @blog.update_attributes(params[:blog])
+    @category = @model_class.find(params[:id])
+    #    params[:category][:category] = params[:categories].join(",") unless params[:categories].blank?
+    if @category.update_attributes(params[:category])
       flash[:notice] = t('labels.update_success')
       redirect_to eval("admin_#{@model_singularize.tableize}_path")
     else
@@ -59,8 +59,8 @@ class Admin::CategoriesController < Admin::BasesController
   end
 
   def destroy
-    @blog = @model_class.find(params[:id])
-    @blog.destroy
+    @category = @model_class.find(params[:id])
+    @category.destroy
 
     respond_to do |format|
       format.html { redirect_to( eval("admin_#{@model_singularize.tableize}_path")) }
