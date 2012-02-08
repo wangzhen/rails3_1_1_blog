@@ -2,7 +2,7 @@ class TopsController < ApplicationController
   # GET /blogs
   # GET /blogs.xml
   def index
- 
+    @blogs = Blog.order('id desc').limit(5)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @blogs }

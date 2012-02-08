@@ -11,22 +11,14 @@
 </div>
 <div id="pagebody">
   <div class="wrapper">
-    <div id="sidebar" class="col-2">
-      <%  Category.root.each do |root| -%>
-      <h4 style=" border-bottom: 0px solid #DEDEDE;"><%= root.name %></h4>
-      <ul class="submenu" style=" border-top: 1px solid #DEDEDE;">
-        <% root.children.each do |children| %>
-        <li><a href="/about/requirements/"><%= children.name %></a></li>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
+    <%= render :partial => "/shared/left_banner" %>
 
     <div class="col-10">
-      <h3>Connect with the Community</h3>
+      <% @blogs.each do |blog|  %>
+        <h3 class="head"><%= link_to  blog.title ,blog_path(blog) %></h3>
 
-      <p>In addition to online resources like <a href="/support/">the forums</a> and <a href="http://codex.wordpress.org/Mailing_Lists">mailing lists</a> a great way to get involved with WordPress is to <a href="http://wordcamp.org/">attend or volunteer at a WordCamp</a>, which are free or low-cost events that happen all around the world to gather and educate WordPress users, organized by WordPress users. <a href="http://wordcamp.org/">Check out the website</a>, there might be a WordCamp near you.</p>
-
+          <p><%= blog.content.html_safe %></p>
+      <% end %>
  
     </div>
 
