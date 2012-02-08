@@ -12,6 +12,7 @@
 @import url("/assets/wp4.css?20");
 </style>
 <%= stylesheet_link_tag 'iphone' %>
+<%= stylesheet_link_tag 'style' %>
 
 <!--[if lt IE 8]>
 <style type="text/css">
@@ -23,7 +24,7 @@
 <body id="wordpress-org">
 <div id="header">
 	<div class="wrapper">
-		<h1><a href="http://wordpress.org">Amthony Blog</a></h1>
+		<h1><a href="/">Amthony Blog</a></h1>
 
 		<form action="http://wordpress.org/search/do-search.php" method="get" id="head-search">
 			<input class="text" name="search" type="text" value="Search WordPress.org" maxlength="150" onfocus="this.value=(this.value=='Search WordPress.org') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Search WordPress.org' : this.value;" /> <input type="submit" class="button" value="Go" />
@@ -43,6 +44,34 @@
 	</div>
 </div>
   <%= yield %>
+
+
+
+<div id="footer">
+	<div class="wrapper">
+
+		<p>
+			<a href="http://wordpress.org/about/privacy/">Privacy</a> |
+			<a href="http://wordpress.org/about/license/">License / GPLv2</a>
+            &nbsp; &nbsp; See also:
+            <a href="http://wordpress.com/?ref=wporg-footer" title="Hassle-free WP hosting">WordPress.com</a> |
+			<a href="http://wordpress.tv/" title="Videos, tutorials, WordCamps">WordPress.TV</a> |
+			<a href="http://central.wordcamp.org/" title="Find a WordPress event near your home">WordCamp</a> |
+			<a href="http://jobs.wordpress.net/" title="Find or post WordPress jobs">WP Jobs</a> |
+            <a href="http://ma.tt/" title="Co-founder of WordPress, an example of what WordPress can do">Matt</a> |
+			<a href="http://wordpress.org/news/feed/" class="rsslink">Blog RSS</a>
+
+		</p>
+<br />
+<iframe src="http://www.facebook.com/plugins/like.php?app_id=121415197926116&amp;href=http%3A%2F%2Fwww.facebook.com%2Fwordpress&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+<div class="g-plusone" data-size="medium" data-href="https://plus.google.com/107188080561309681193"></div>
+<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/follow_button.html?screen_name=WordPress&show_count=false" style="width:150px; height:20px;"></iframe>
+
+		<h6>Code is Poetry</h6>
+	</div>
+</div>
+
+ 
 </body>
 
 

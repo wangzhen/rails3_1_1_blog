@@ -18,7 +18,7 @@ class Category < ActiveRecord::Base
   end
 
   def children
-    Category.where('parent_id' => self.parent_id)
+    Category.where(:parent_id => self.id)
   end
 
 end

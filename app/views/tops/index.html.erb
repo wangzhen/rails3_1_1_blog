@@ -2,81 +2,127 @@
 <!-- feed is cached -->
 
 <div id="home-welcome" style="padding-bottom: 14px;">
-	<div class="wrapper">
+  <div class="wrapper">
+    <p class="intro"><strong>WordPress</strong> is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the&nbsp;same&nbsp;time.</p>
 
-				<img alt="" class="screenshot" src="http://s.wordpress.org/screenshots/3.3/ss3-dragndrop.png?1" width="466" height="303" />
+    <p>The core software is built by hundreds of community volunteers, and when you&#8217;re ready for more there are thousands of <a href="/extend/plugins/">plugins</a> and <a href="/extend/themes/">themes</a> available to transform your site into almost <a href="/showcase/">anything you can imagine</a>. Over 60 million people have chosen WordPress to power the place on the web they call &#8220;home&#8221; &#8212; we&#8217;d love you to join the family.</p>
 
-		<p class="intro"><strong>WordPress</strong> is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the&nbsp;same&nbsp;time.</p>
-
-		<p>The core software is built by hundreds of community volunteers, and when you&#8217;re ready for more there are thousands of <a href="/extend/plugins/">plugins</a> and <a href="/extend/themes/">themes</a> available to transform your site into almost <a href="/showcase/">anything you can imagine</a>. Over 60 million people have chosen WordPress to power the place on the web they call &#8220;home&#8221; &#8212; we&#8217;d love you to join the family.</p>
-
-		<p>Ready to get started? <a class="button download-button" href="/download/">Download&nbsp;WordPress&nbsp;3.3.1</a></p>
-
-	</div>
+  </div>
 </div>
-<div id="lang-guess-wrap"></div>
+<div id="pagebody">
+  <div class="wrapper">
+    <div id="sidebar" class="col-2">
+      <%  Category.root.each do |root| -%>
+      <h4 style=" border-bottom: 0px solid #DEDEDE;"><%= root.name %></h4>
+      <ul class="submenu" style=" border-top: 1px solid #DEDEDE;">
+        <% root.children.each do |children| %>
+        <li><a href="/about/requirements/"><%= children.name %></a></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
 
-<div id="home-below">
-	<div class="wrapper">
-		<div class="col-2">
+    <div class="col-7">
+      <p class="intro">WordPress started in 2003 with a single bit of code to enhance the typography of everyday writing and with fewer users than you can count on your fingers and toes. Since then it has grown to be the largest self-hosted blogging tool in the world, used on millions of sites and seen by tens of millions of people every day.</p>
 
-<h4><a href="http://wordpress.hellomerch.com">WordPress&nbsp;Swag</a></h4>
-<a href="/about/swag"><img width="132" height="177" src="http://s.wordpress.org/images/swag/wphoodie.jpg?1" alt="WordPress Swag" /></a>
+      <p>Everything you see here, from the documentation to the code itself, was created <strong>by and for the community</strong>. WordPress is an <a href="http://www.opensource.org/">Open Source</a> project, which means there are hundreds of people all over the world working on it. (More than most commercial platforms.) It also means you are free to use it for anything from your <a href="http://icanhascheezburger.com/">cat’s home page</a> to a <a href="http://wordpress.org/showcase/tag/fortune-500/">Fortune 500 web site</a> without paying anyone a license fee <a href="http://www.gnu.org/philosophy/free-sw.html">and a number of other important freedoms</a>.</p>
 
-		</div>
+      <h3>About WordPress.org</h3>
 
-		<div class="col-4">
-			<h4><a href="/news/">News From Our Blog</a></h4>
+      <p>On this site you can download and install a software script called WordPress. To do this you need a <a href="/hosting/">web host</a> who meets the <a href="/about/requirements/">minimum requirements</a> and a little time. WordPress is <a href="/extend/">completely customizable</a> and can be used for almost anything. There is also a <strong>service</strong> called <a href="http://wordpress.com/?ref=wporg-about">WordPress.com</a> which lets you get started with a new and free WordPress-based blog in seconds, but varies in several ways and is less flexible than the WordPress you download and install yourself.</p>
 
-			<h5><a href="http://wordpress.org/news/2012/01/year-of-the-meetup/">Year of the Meetup</a></h5>
-	 	    <p>We hereby declare 2012 as the Year of the WordPress Meetup. You'll want to get in on this action. So what is a WordPress Meetup? Basically, it's people in a community getting together &#8212; meeting up &#8212; who share an interest in WordPress, whether they be bloggers, business users, developers, consultants, or any other category of person able to say, "I use WordPress in some way and I like it, and I want to meet other people who can say the same.</p>
-		</div>
+      <h3>What You Can Use WordPress For</h3>
 
+      <p>WordPress started as just a blogging system, but has evolved to be used as full content management system and so much more through the <a href="/extend/">thousands of plugins, widgets, and themes</a>, WordPress is limited only by your imagination. (And tech chops.)</p>
 
-		<div class="col-4">
-			<h4>It&rsquo;s Easy&nbsp;As&hellip;</h4>
+      <h3>Connect with the Community</h3>
 
-			<ol class="steps">
-				<li class="one"><a href="/hosting/">Find a Web Host</a> and get great hosting while supporting WordPress at the same&nbsp;time.</li>
-				<li class="two"><a href="/download/">Download &amp; Install WordPress</a> with our famous 5-minute&nbsp;installation. Feel like a rock star.</li>
+      <p>In addition to online resources like <a href="/support/">the forums</a> and <a href="http://codex.wordpress.org/Mailing_Lists">mailing lists</a> a great way to get involved with WordPress is to <a href="http://wordcamp.org/">attend or volunteer at a WordCamp</a>, which are free or low-cost events that happen all around the world to gather and educate WordPress users, organized by WordPress users. <a href="http://wordcamp.org/">Check out the website</a>, there might be a WordCamp near you.</p>
 
-				<li class="three"><a href="http://codex.wordpress.org/Main_Page">Read the Documentation</a> and become a WordPress expert yourself, impress your friends.</li>
-			</ol>
-		</div>
+      <h3>A Little History</h3>
 
-		<div class="col-2">
-			<h4><a href="/showcase/">WordPress&nbsp;Users</a></h4>
-			<ul id="notable-users">
+      <p>WordPress was born out of a desire for an elegant, well-architectured personal publishing system built on <abbr title="PHP: Hypertext Preprocessor"><a href="http://php.net">PHP</a></abbr> and <a href="http://mysql.com">MySQL</a> and licensed under the <abbr title="GNU Public License"><a href="http://www.gnu.org/copyleft/gpl.html">GPLv2</a></abbr> (or later). It is the official successor of b2/cafelog. WordPress is fresh software, but its roots and development go back to 2001. It is a mature and stable product. We hope by focusing on user experience and <a href="http://webstandards.org/">web standards</a> we can create a tool different from anything else out there.</p>
 
-				<li><a href='http://wordpress.org/showcase/ebay-ink/'><img src='http://s.wordpress.org/images/notableusers/ebay.png' alt='ebay' width='130' height='57' /></a></li><li><a href='http://wordpress.org/showcase/b5media/'><img src='http://s.wordpress.org/images/notableusers/b5media.png' alt='b5media' width='130' height='57' /></a></li><li><a href='http://wordpress.org/showcase/webmonkey/'><img src='http://s.wordpress.org/images/notableusers/wired.png' alt='wired' width='130' height='57' /></a></li>			</ul>
-			<p id="showcase-link"><a href="/showcase/">&hellip; and hundreds more</a></p>
-		</div>
-	</div>
+      <p>For a bit more about WordPress' history <a href="http://en.wikipedia.org/wiki/WordPress">check out the WordPress Wikipedia page</a> or <a href="http://codex.wordpress.org/History">this page on our own Codex</a>.</p>
+
+    </div>
+
+    <div class="col-3">
+      <div>
+        <h3>Lead Developers</h3>
+        <ul>
+          <li><a href="http://boren.nu/">Ryan Boren</a><br>
+			Bug Whisperer</li>
+          <li><a href="http://markjaquith.com/">Mark Jaquith</a><br>
+			Director of Whitespace</li>
+          <li><a href="http://ma.tt/">Matt Mullenweg</a><br>
+			Head of Bug Creation</li>
+          <li><a href="http://www.laptoptips.ca/">Andrew Ozz</a><br>
+            Tiny Manly Code Editor (MCE)</li>
+          <li><a href="http://blog.ftwr.co.uk/">Peter Westwood</a><br>
+			Title Rebuilding</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Design</h3>
+        <ul>
+          <li><a href="http://www.field2.com/">Ben Dunkle</a></li>
+          <li><a href="http://iammattthomas.com/">Matt Thomas</a></li>
+          <li><a href="http://jane.wordpress.com/">Jane Wells</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contributing Developers</h3>
+        <ul>
+          <li><a href="http://blogwaffe.com/">Michael Adams</a></li>
+          <li><a href="http://nikolay.bg/">Nikolay Bachiyski</a></li>
+          <li><a href="http://joncave.co.uk/">Jon Cave</a></li>
+          <li><a href="http://dd32.id.au/">Dion Hulse</a></li>
+          <li><a href="http://darylkoop.com/">Daryl Koopersmith</a></li>
+          <li><a href="http://andrewnacin.com/">Andrew Nacin</a></li>
+          <li><a href="http://josephscott.org/">Joseph Scott</a></li>
+          <li><a href="http://andyskelton.com/">Andy Skelton</a></li>
+          <li><a href="http://ottodestruct.com/">Samuel Wood</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Documentation and Support</h3>
+        <ul>
+          <li>Mark Riley</li>
+          <li><a href="http://www.cameraontheroad.com/">Lorelle</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Developer Emeriti</h3>
+        <ul>
+          <li><a href="http://robinadr.com/">Robin Adrianse</a></li>
+          <li><a href="http://dougal.gunters.org/">Dougal Campbell</a></li>
+          <li><a href="http://ocaoimh.ie/">Donncha O Caoimh</a></li>
+          <li>Robert Deaton</li>
+          <li><a href="http://xmouse.ithium.net/">David House</a> </li>
+          <li><a href="http://www.alexking.org/blog/">Alex King</a></li>
+          <li><a href="http://zed1.com/journalized/">Mike Little<br>
+            </a>(co-founding dev)</li>
+          <li><a href="http://intraordinary.com/">Michel Valdrighi<br>
+            </a>(original b2 author)</li>
+          <li><a href="http://www.asymptomatic.net/">Owen Winkler</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Also…</h3>
+        <ul>
+          <li><a href="http://binarybonsai.com/">Michael Heilemann</a></li>
+          <li><a href="http://mpt.net.nz/">Matthew Paul Thomas</a></li>
+          <li>Ulf Harnhammar</li>
+          <li><a href="http://meidell.dk/">Brian Meidell</a></li>
+          <li><a href="http://movabletype.org/">Movable Type</a>, <a href="http://drupal.org/">Drupal</a>, and <a href="http://textpattern.com/">TextPattern</a> for ideas and inspiration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<div id="footer">
-	<div class="wrapper">
-
-		<p>
-			<a href="http://wordpress.org/about/privacy/">Privacy</a> |
-			<a href="http://wordpress.org/about/license/">License / GPLv2</a>
-            &nbsp; &nbsp; See also:
-            <a href="http://wordpress.com/?ref=wporg-footer" title="Hassle-free WP hosting">WordPress.com</a> |
-			<a href="http://wordpress.tv/" title="Videos, tutorials, WordCamps">WordPress.TV</a> |
-			<a href="http://central.wordcamp.org/" title="Find a WordPress event near your home">WordCamp</a> |
-			<a href="http://jobs.wordpress.net/" title="Find or post WordPress jobs">WP Jobs</a> |
-            <a href="http://ma.tt/" title="Co-founder of WordPress, an example of what WordPress can do">Matt</a> |
-			<a href="http://wordpress.org/news/feed/" class="rsslink">Blog RSS</a>
-
-		</p>
-<br />
-<iframe src="http://www.facebook.com/plugins/like.php?app_id=121415197926116&amp;href=http%3A%2F%2Fwww.facebook.com%2Fwordpress&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
-<div class="g-plusone" data-size="medium" data-href="https://plus.google.com/107188080561309681193"></div>
-<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/follow_button.html?screen_name=WordPress&show_count=false" style="width:150px; height:20px;"></iframe>
-
-		<h6>Code is Poetry</h6>
-	</div>
-</div>
-
- 
