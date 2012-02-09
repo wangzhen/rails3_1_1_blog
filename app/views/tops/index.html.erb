@@ -1,7 +1,7 @@
 
 <!-- feed is cached -->
 
-<div id="home-welcome" style="padding-bottom: 14px;">
+<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
   <div class="wrapper">
     <p class="intro"><strong>WordPress</strong> is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the&nbsp;same&nbsp;time.</p>
 
@@ -11,15 +11,15 @@
 </div>
 <div id="pagebody">
   <div class="wrapper">
-    <%#= render :partial => "/shared/left_banner" %>
+    <%= render :partial => "/shared/left_banner" %>
 
     <div class="col-10">
       <% @blogs.each do |blog|  %>
         <h3 class="head"><%= link_to  blog.title ,blog_path(blog) %></h3>
 
-          <p><%= blog.content.html_safe %></p>
+        <p><%= blog.content.html_safe %></p>
       <% end %>
- 
+      <%= paginate(@blogs) %>
     </div>
 
   </div>

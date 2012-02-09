@@ -4,8 +4,8 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
     @search = Blog.search(params[:search])
-    @blogs = @search.all
-    @blogs = @search.page params[:page]
+    @search.category_id_equals = params[:category_id] unless params[:category_id].blank?
+    @blogs = @search.page( params[:page]).per(10 ||params[:per_page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @blogs }

@@ -1,25 +1,24 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @blog.title %>
-</p>
+<!-- feed is cached -->
 
-<p>
-  <b>Content:</b>
-  <%= @blog.content %>
-</p>
+<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
+  <div class="wrapper">
+    <p class="intro"><strong>WordPress</strong> is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the&nbsp;same&nbsp;time.</p>
 
-<p>
-  <b>Is public:</b>
-  <%= @blog.is_public %>
-</p>
+    <p>The core software is built by hundreds of community volunteers, and when you&#8217;re ready for more there are thousands of <a href="/extend/plugins/">plugins</a> and <a href="/extend/themes/">themes</a> available to transform your site into almost <a href="/showcase/">anything you can imagine</a>. Over 60 million people have chosen WordPress to power the place on the web they call &#8220;home&#8221; &#8212; we&#8217;d love you to join the family.</p>
 
-<p>
-  <b>Public datetime:</b>
-  <%= @blog.public_datetime %>
-</p>
+  </div>
+</div>
+<div id="pagebody">
+  <div class="wrapper">
+    <%= render :partial => "/shared/left_banner" %>
 
+    <div class="col-10">
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+        <h3 class="head"><%= @blog.title %></h3>
+
+          <p><%= @blog.content.html_safe %></p>
+    </div>
+
+  </div>
+</div>
