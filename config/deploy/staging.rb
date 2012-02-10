@@ -11,8 +11,8 @@ namespace :mod_rails do
   task :restart, :roles => :app do
     run "cp /home/wangzhen/www/rails3_1_1_blog/database.yml /home/wangzhen/www/rails3_1_1_blog/current/config/."
     #    run '/home/wangzhen/.rvm/rubies/ruby-1.9.2-p290/bin/ruby /home/wangzhen/.rvm/gems/ruby-1.9.2-p290@rails3.1/bin/passenger start -p 3002 -d'
-    #    run "touch  #{File.join(deploy_to, current_dir)}/tmp/restart.txt"
-    run 'sh -x /home/wangzhen/www/rails3_1_1_blog/stop.sh'
+    run "touch  #{File.join(deploy_to, current_dir)}/tmp/restart.txt"
+    run "source /home/wangzhen/www/rails3_1_1_blog/stop.sh"
   end
 end
 
