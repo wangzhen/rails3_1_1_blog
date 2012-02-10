@@ -85,8 +85,8 @@ sup {
 
 #header h1 a {
 	display: block;
-	background: url(http://s.wordpress.org/style/images/wp3-logo.png) center left no-repeat;
-	width: 301px;
+/*	background: url(http://s.wordpress.org/style/images/wp3-logo.png) center left no-repeat;*/
+/*	width: 301px;*/
 	height: 88px;
 	text-indent: -9999px;
 	float: left;

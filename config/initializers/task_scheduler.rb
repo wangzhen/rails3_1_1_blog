@@ -16,7 +16,7 @@ scheduler = Rufus::Scheduler.start_new
 #  puts 'activate security system'
 #end
 #
-scheduler.every '5m' do
+scheduler.every '5h' do
 #   Weibo.get_all_weibo
   puts 'check blood pressure'
 end

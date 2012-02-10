@@ -15,9 +15,102 @@
 
     <div class="col-10">
 
-        <h3 class="head"><%= @blog.title %></h3>
+      <h1 class="head" style="font-weight: bold;"><%= @blog.title %></h1>
+      <br />
 
-          <p><%= @blog.content.html_safe %></p>
+      <div class="bubble" >
+
+        <div id="issuecomment-1401778" class="comment normal-comment">
+          <div class="cmeta">
+            <p class="author">
+              <span class="icon"></span>
+              <strong class="author"><a href="/sheldonh"><%= @blog.category.name %></a></strong>
+              <em class="action-text">
+                <a href="#issuecomment-1401778">
+                  <%=  @blog.category.name  %>
+                </a>
+              </em>
+            </p>
+            <p class="info">
+              <em class="date"><a href="#issuecomment-1401778"><%=  @blog.created_at.strftime("%Y-%m-%d %X") %></a></em>
+            </p>
+          </div>
+
+
+          <div class="body">
+            <div class="formatted-content">
+              <div class="content-body markdown-body markdown-format">
+                <p><%= @blog.content.html_safe %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <style type="text/css">
+        .bubble {
+          padding: 3px;
+          background: #EEE;
+          border-radius: 3px;
+          font: 13px helvetica,arial,freesans,clean,sans-serif;
+          line-height: 1.4;
+          color: #333;
+        }
+
+        .comment {
+          margin: 0;
+          padding: 0;
+          border: 1px solid #CACACA;
+        }
+        .cmeta {
+          height: 33px;
+          padding: 0 10px;
+          border-bottom: 1px solid #CCC;
+          background: url('/images/metabar.gif') 0 0 repeat-x;
+        }
+
+        .comment > .body {
+          position: relative;
+          padding: 0;
+          color: #333;
+          font-size: 12px;
+          background: #FBFBFB;
+        }
+        .comment .content-body {
+          padding: 10px;
+          font-size: 13px;
+        }
+        .comment .cmeta p.author {
+          margin: 0;
+          float: left;
+          max-width: 600px;
+          font-size: 12px;
+          height: 33px;
+          line-height: 33px;
+          text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .comment .cmeta p.info {
+          float: right;
+          margin: 0;
+          font-size: 11px;
+          height: 33px;
+          line-height: 33px;
+        }
+
+        .comment .content-body {
+          padding: 10px;
+          font-size: 13px;
+          line-height: 1.6;
+        }
+
+      </style>
+
+
+
     </div>
 
   </div>

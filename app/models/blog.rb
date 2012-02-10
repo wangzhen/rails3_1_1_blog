@@ -22,7 +22,7 @@ class Blog < ActiveRecord::Base
   validates :content , :presence => true
   validates :category_id , :presence => true
 
-  belongs_to :categroy
+  belongs_to :category
 
 
 end

@@ -54,7 +54,16 @@ GEM
       mime-types (~> 1.16)
       orm_adapter (~> 0.0.5)
     cocaine (0.2.1)
+    coffee-rails (3.1.1)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.1.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.2.0)
     erubis (2.7.0)
+    execjs (1.3.0)
+      multi_json (~> 1.0)
     highline (1.6.9)
     hike (1.2.1)
     hpricot (0.8.5)
@@ -128,6 +137,12 @@ GEM
     rinku (1.2.2)
     rufus-scheduler (2.0.16)
       tzinfo (>= 0.3.23)
+    sass (3.1.12)
+    sass-rails (3.1.5)
+      actionpack (~> 3.1.0)
+      railties (~> 3.1.0)
+      sass (~> 3.1.10)
+      tilt (~> 1.3.2)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -141,6 +156,9 @@ GEM
     turn (0.8.2)
       ansi (>= 1.2.2)
     tzinfo (0.3.31)
+    uglifier (1.2.3)
+      execjs (>= 0.3.0)
+      multi_json (>= 1.0.2)
 
 PLATFORMS
   ruby
@@ -152,6 +170,7 @@ DEPENDENCIES
   capistrano-ext
   carrierwave
   ckeditor
+  coffee-rails (~> 3.1.1)
   hpricot
   jquery-rails
   kaminari
@@ -163,4 +182,6 @@ DEPENDENCIES
   rails-i18n
   rinku (~> 1.2.2)
   rufus-scheduler
+  sass-rails (~> 3.1.5)
   turn (= 0.8.2)
+  uglifier (>= 1.0.3)
