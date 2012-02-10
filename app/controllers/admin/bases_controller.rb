@@ -4,6 +4,17 @@ class Admin::BasesController < ActionController::Base
 #  include ExceptionNotifiable
   layout "admin/base"
   before_filter :admin_authorize ,:set_locale
+  before_filter do
+    begin
+      @model = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.classify.constantize
+      @model_string = self.class.to_s.split('::').last.sub(/Controller$/, '').singularize.downcase
+    rescue
+      p  'ERROR_BASE'
+    end
+  end
+  require 'admin_template'
+  include AdminTemplate
+
   #
   #    protected
   #

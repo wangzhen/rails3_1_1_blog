@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/shared/_submenu.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/locales/models/zh.yml</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/locales/global/zh.yml</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/environment.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/application.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/layouts/admin/base.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/administrators/new.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/blogs/new.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/categories/new.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/categories/edit.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/administrators/edit.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/blogs/edit.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/blogs/index.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/categories/index.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/categories/_search.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/views/admin/blogs/_search.html.erb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/controllers/admin/categories_controller.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/models/ckeditor/attachment_file.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/deploy/staging.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/deploy.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/deploy/production.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/lib/active_scaffold.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/controllers/admin/bases_controller.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/routes.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/config/boot.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/lib/admin_template.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/controllers/admin/blogs_controller.rb</file>
+        <file>file:/Users/kembo-imac/rails3works/rails3_1_1_blog/app/controllers/admin/administrators_controller.rb</file>
+    </open-files>
 </project-private>
