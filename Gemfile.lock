@@ -4,6 +4,20 @@ GIT
   specs:
     mysql2 (0.3.11)
 
+GIT
+  remote: https://github.com/cowboyd/therubyracer.git
+  revision: bd4a38e668d5b830594d90c29a4cb12d4905e255
+  specs:
+    therubyracer (0.9.9)
+      libv8 (~> 3.3.10)
+
+GIT
+  remote: https://github.com/sstephenson/execjs.git
+  revision: 6eb82936e208a1eac33a9751e956dec9c93a27d7
+  specs:
+    execjs (1.3.0)
+      multi_json (~> 1.0)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -62,8 +76,6 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     erubis (2.7.0)
-    execjs (1.3.0)
-      multi_json (~> 1.0)
     highline (1.6.9)
     hike (1.2.1)
     hpricot (0.8.5)
@@ -76,6 +88,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    libv8 (3.3.10.4)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -171,6 +184,7 @@ DEPENDENCIES
   carrierwave
   ckeditor
   coffee-rails (~> 3.1.1)
+  execjs!
   hpricot
   jquery-rails
   kaminari
@@ -183,5 +197,6 @@ DEPENDENCIES
   rinku (~> 1.2.2)
   rufus-scheduler
   sass-rails (~> 3.1.5)
+  therubyracer!
   turn (= 0.8.2)
   uglifier (>= 1.0.3)

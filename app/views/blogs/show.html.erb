@@ -24,12 +24,7 @@
           <div class="cmeta">
             <p class="author">
               <span class="icon"></span>
-              <strong class="author"><a href="/sheldonh"><%= @blog.category.name %></a></strong>
-              <em class="action-text">
-                <a href="#issuecomment-1401778">
-                  <%=  @blog.category.name  %>
-                </a>
-              </em>
+              <strong class="author">分类：<a href="/blogs?category_id?<%= @blog.category_id %>"><%= @blog.category.name %></a></strong>
             </p>
             <p class="info">
               <em class="date"><a href="#issuecomment-1401778"><%=  @blog.created_at.strftime("%Y-%m-%d %X") %></a></em>
@@ -67,7 +62,7 @@
           height: 33px;
           padding: 0 10px;
           border-bottom: 1px solid #CCC;
-          background: url('/images/metabar.gif') 0 0 repeat-x;
+          background: url('/images/metabar.gif')  0  -33px repeat-x;
         }
 
         .comment > .body {
