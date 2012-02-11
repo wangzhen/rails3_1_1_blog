@@ -48,5 +48,5 @@ module Rails311blog  class Application < Rails::Application
     config.assets.version = '1.0'
   end
 end
-$url ||= {}
+$url = []
 ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|  "#{html_tag}".html_safe }
