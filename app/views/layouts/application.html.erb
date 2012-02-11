@@ -49,9 +49,6 @@
 
 <div class="wrapper">
     <p> 友情链接：
-      <a target="_blank" href="http://haofeicui.com">好翡翠</a> &nbsp; &nbsp;
-      <a  target="_blank" href="http://www.jadejade.cn">翡翠网络</a> &nbsp; &nbsp;
-      <a  target="_blank" href="http://www.yezing.com/">夜子</a> &nbsp; &nbsp;
       <% Link.all.each do |link|  %>
         <a  target="_blank" href="<%= link.url %>" > <%=  link.name %> </a> &nbsp; &nbsp;
       <% end %>
