@@ -47,6 +47,25 @@
 
 
 
+<div class="wrapper">
+    <p> 友情链接：
+      <a target="_blank" href="http://haofeicui.com">好翡翠</a> &nbsp; &nbsp;
+      <a  target="_blank" href="http://www.jadejade.cn">翡翠网络</a> &nbsp; &nbsp;
+      <a  target="_blank" href="http://www.yezing.com/">夜子</a> &nbsp; &nbsp;
+      <% $url.each do |url|  %>
+        <a  target="_blank" href="<%= url[:url] %>" > <%=  url[:name] %> </a> &nbsp; &nbsp;
+        <%= url %>
+      <% end %>
+  <%= form_tag '/tops/' do %>
+        友情链接申请：
+        URL<%= text_field_tag :url  ,"",:class => 'text' ,:style => 'width:300px' %>
+        网站名称<%= text_field_tag :name  ,"",:class => 'text' ,:style => 'width:100px' %>
+        <input type="submit" class="button" value="提交">
+<% end %>
+  </p>
+
+</div>
+
 <div id="footer">
 	<div class="wrapper">
 
