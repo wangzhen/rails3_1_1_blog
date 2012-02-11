@@ -9,15 +9,15 @@ set :deploy_via, :export
 
 set :repository,  "git://github.com/wangzhen/rails3_1_1_blog.git"
 
-#set :user do Capistrano::CLI.ui.ask('SSH User: ') end
-set :user, "wangzhen"
-#set :password do Capistrano::CLI.password_prompt('SSH Password: ') end
-set :password, 'hfchfc888'
+set :user do Capistrano::CLI.ui.ask('SSH User: ') end
+#set :user, ""
+set :password do Capistrano::CLI.password_prompt('SSH Password: ') end
+#set :password, ''
 
 #set :scm_user do Capistrano::CLI.ui.ask('SVN User: ') end
-#set :scm_user, "wangzhen"
+#set :scm_user, ""
 ##set :scm_password do Capistrano::CLI.password_prompt('SVN Password: ') end
-#set :scm_password, 'hfchfc888'
+#set :scm_password, ''
 
 
 #run 'rvm use 1.9.2@rails3.1'
