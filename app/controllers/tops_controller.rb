@@ -2,7 +2,6 @@ class TopsController < ApplicationController
   # GET /blogs
   # GET /blogs.xml
   def index
-    $url ||= []
     @blogs = Blog.all
     @search = Blog.search(params[:search])
 
