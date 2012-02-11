@@ -1,4 +1,12 @@
 module ApplicationHelper
+
+  def  nav_on(controller , action)
+    if controller == controller_name && action == action_name
+      return 'current'
+    elsif controller == controller_name  && action.blank?
+      return  'current'
+    end
+  end
     def parse_datetime(time)
     time.strftime("%Y-%m-%d <br/> %X") if time
   end

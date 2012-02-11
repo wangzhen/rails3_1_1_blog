@@ -1,36 +1,33 @@
 
 <!-- feed is cached -->
-
-<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
+<div id="headline">
   <div class="wrapper">
-    <p class="intro"><strong>WordPress</strong> is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the&nbsp;same&nbsp;time.</p>
-
-    <p>The core software is built by hundreds of community volunteers, and when you&#8217;re ready for more there are thousands of <a href="/extend/plugins/">plugins</a> and <a href="/extend/themes/">themes</a> available to transform your site into almost <a href="/showcase/">anything you can imagine</a>. Over 60 million people have chosen WordPress to power the place on the web they call &#8220;home&#8221; &#8212; we&#8217;d love you to join the family.</p>
-
+    <h2><a href="/blogs" title="WordPress News" rel="home">Blog</a> ==>
+      <%= link_to  @blog.category.name , blog_path(:category_id => @blog.category_id) %></h2>
   </div>
 </div>
 <div id="pagebody">
   <div class="wrapper">
-    <%= render :partial => "/shared/left_banner" %>
 
-    <div class="col-10">
+    <div class="col-14">
 
-      <h1 class="head" style="font-weight: bold;"><%= @blog.title %></h1>
+      <h1 class="head" style="font-weight: bold;text-align: center"><%= @blog.title %></h1>
       <br />
 
       <div class="bubble" >
 
         <div id="issuecomment-1401778" class="comment normal-comment">
-          <div class="cmeta">
-            <p class="author">
-              <span class="icon"></span>
-              <strong class="author">分类：<a href="/blogs?category_id?<%= @blog.category_id %>"><%= @blog.category.name %></a></strong>
-            </p>
-            <p class="info">
-              <em class="date"><a href="#issuecomment-1401778"><%=  @blog.created_at.strftime("%Y-%m-%d %X") %></a></em>
-            </p>
-          </div>
-
+          <!--
+           <div class="cmeta">
+             <p class="author">
+               <span class="icon"></span>
+               <strong class="author">分类：<a href="/blogs?category_id?<%= @blog.category_id %>"><%= @blog.category.name %></a></strong>
+             </p>
+             <p class="info">
+               <em class="date"><a href="#issuecomment-1401778"><%=  @blog.created_at.strftime("%Y-%m-%d %X") %></a></em>
+             </p>
+           </div>
+          -->
 
           <div class="body">
             <div class="formatted-content">
@@ -109,4 +106,15 @@
     </div>
 
   </div>
+
+  <p style="clear:both">&nbsp; </p>
+</div>
+<div class="wrapper">
+  <%  Category.root.each do |root| -%>
+    <p> <%= root.name %>:
+    <% root.children.each do |children| %>
+      <a href="/blogs?category_id=<%= children.id %>"><%= children.name %></a>
+    <% end %>
+  </p>
+<% end %>
 </div>

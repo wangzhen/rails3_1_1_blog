@@ -1,7 +1,13 @@
 Rails311blog::Application.routes.draw do
  
   resources :blogs
-  resources :tops
+  resources :tops do
+        collection do
+        get :resume
+        get :logout
+        post :setlocale
+      end
+  end
   #  namespace :admin do |admin|
   #    admin.login '/',:controller => 'sessions',:action => 'new'
   #    admin.resources :sessions,:collection => {:home=>[:get,:post],:logout=>[:get,:post] ,:setlocale => :post}
