@@ -66,6 +66,22 @@
 
 
 
+      <li class="Level1 <%= 'current' if controller_name == 'pages' %>"><%= link_to '网站静态页面', admin_pages_path, :class => "l1" %>
+        <% if  ['pages'].include?(controller_name) %>
+        <ul class="Level2">
+
+          <% Page.all.each do |page|  %>
+            <li class="">
+              <%= link_to page.name, edit_admin_page_path(page) %>
+            </li>
+          <% end %>
+          <li class="last">
+            <%= link_to "添加模块", new_admin_page_path %>
+          </li>
+        </ul>
+        <% end %>
+      </li>
+
 
 
 

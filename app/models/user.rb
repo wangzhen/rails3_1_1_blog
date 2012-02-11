@@ -59,11 +59,11 @@ class User < ActiveRecord::Base
   #
   # 实例方法
   # Activates the user in the database.
-  def activate!
+  def activate
     @activated = true
     self.activated_at = Time.now
     self.activation_code = nil
-    save
+    save!
   end
 
 
@@ -85,4 +85,4 @@ class User < ActiveRecord::Base
   #    self.activation_code = make_token
   #  end
 end
- 
+

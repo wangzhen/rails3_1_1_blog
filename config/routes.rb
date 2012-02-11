@@ -28,6 +28,7 @@ Rails311blog::Application.routes.draw do
     resources :categories
     resources :blogs
     resources :links
+    resources :pages
   end
 
   root :to => "tops#index"

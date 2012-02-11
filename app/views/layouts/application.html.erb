@@ -65,18 +65,7 @@
 
 </div>
 
-<div id="footer">
-	<div class="wrapper">
-
-		<p>
-			<a href="http://wordpress.org/about/privacy/">Privacy</a> |
-			<a href="http://wordpress.org/about/license/">License / GPLv2</a>
-		</p>
-<br />
-
-		<h6>Anthony</h6>
-	</div>
-</div>
+  <%= raw Page.find_by_id(2).try(:content) %>
 
  
 </body>

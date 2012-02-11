@@ -17,10 +17,11 @@ class TopsController < ApplicationController
   # POST /blogs
   # POST /blogs.xml
   def create
-
-
+ 
+     unless Link.count > 10
      Link.create({:url => params[:url] , :name => params[:name]  })
-
+     end
+     
     redirect_to :action => "index"
   end
 

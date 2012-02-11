@@ -1,18 +1,1 @@
-
-<!-- feed is cached -->
-
-<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
-  <div class="wrapper">
-    <p class="intro"><strong>个人说明</strong> 个人说明，博客介绍</p>
-  </div>
-</div>
-<div id="pagebody">
-  <div class="wrapper">
-
-
-    <div class="col-10">
- 
-    </div>
-
-  </div>
-</div>
+<%= raw Page.find_by_id(3).try(:content) %>

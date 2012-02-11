@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120231113421) do
+ActiveRecord::Schema.define(:version => 20120328032121) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(:version => 20120231113421) do
   create_table "links", :force => true do |t|
     t.string "url"
     t.string "name"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", :force => true do |t|
