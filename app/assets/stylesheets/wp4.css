@@ -12,6 +12,7 @@ body {
 	font-size: 62.5%;
 	background: #fff;
 	font-family: sans-serif;
+	font-family:  CopseRegular, Arial, Helvetica, sans-serif;
 	line-height: 22px;
 	color: #444;
 	margin-bottom: 40px;
@@ -105,14 +106,16 @@ sup {
 }
 
 #header ul li a {
-	font-family: Helvetica, Arial, "Liberation Sans", sans-serif;
+/*	font-family: Helvetica, Arial, "Liberation Sans", sans-serif;*/
+	font-family:  CopseRegular, Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	display: block;
 	line-height: 34px;
 	padding: 0 7px;
-	font-size: 13px;
+	font-size: 16px;
 	color: #666;
 	text-shadow: #eee 0px 1px 0px;
+        text-shadow: #EEE 2px 2px 2px;
 }
 
 #header ul li a:active {
