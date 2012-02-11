@@ -19,7 +19,7 @@ class TopsController < ApplicationController
   def create
 
 
-    $url << {:url => params[:url] , :name => params[:name] , }
+     Link.create({:url => params[:url] , :name => params[:name]  })
 
     redirect_to :action => "index"
   end

@@ -51,6 +51,21 @@
 
 
 
+      <li class="Level1 <%= 'current' if controller_name == 'links' %>"><%= link_to t('labels.manager', :model => Link.model_name.human), admin_links_path, :class => "l1" %>
+        <% if  ['categories'].include?(controller_name) %>
+          <ul class="Level2">
+            <li class=" <%= (action_name=='edit'||action_name=='index')&& controller_name=='links' ? 'on' :'' %>">
+              <%= link_to t('labels.manager', :model => Link.model_name.human), admin_links_path %>
+            </li>
+            <li class="last <%= action_name=='new'&& controller_name=='links' ? 'on' :'' %>">
+              <%= link_to t('labels.add_manager', :model => Link.model_name.human), new_admin_link_path %>
+            </li>
+          </ul>
+        <% end %>
+      </li>
+
+
+
 
 
 

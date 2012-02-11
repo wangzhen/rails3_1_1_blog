@@ -5,7 +5,7 @@
     <title><%= @title || "admin" %></title>
     <%= stylesheet_link_tag 'admin'  %>
 
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'member' %>
   <%= csrf_meta_tags %>
 <%#= javascript_include_tag :fckeditor %>
 <%#= calendar_date_select_includes %>
@@ -21,7 +21,7 @@
     <div class="Header">
       <div class="LogoArea">
         <p class="logo">
-          <a href="/" target="_blank"><img src="/assets/admin/logo.png" width="150px" alt="logo" class="MailBulk" style="padding-top: 20px"/></a>
+          <a href="/" target="_blank" class="copse"> Blog管理</a>
         </p>
         <span class="welcome"><%= t("labels.admin_welcome") %></span>
       </div>
