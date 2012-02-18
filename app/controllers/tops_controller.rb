@@ -4,7 +4,6 @@ class TopsController < ApplicationController
   def index
     @blogs = Blog.all
     @search = Blog.search(params[:search])
-
     @blogs = @search.page( params[:page]).per(10 ||params[:per_page])
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +11,9 @@ class TopsController < ApplicationController
     end
   end
 
-
+def ddd
+  
+end
 
   # POST /blogs
   # POST /blogs.xml

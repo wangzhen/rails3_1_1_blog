@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  # GET /blogs
+  # GE: /blogs
   # GET /blogs.xml
   def index
     @blogs = Blog.all
