@@ -5,6 +5,7 @@ class TopsController < ApplicationController
     @blogs = Blog.all
     @search = Blog.search(params[:search])
     @blogs = @search.page( params[:page]).per(10 ||params[:per_page])
+    @title = 'Anthony Blog | Ruby on Rails | ROR | ror | rails | ruby'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @blogs }
