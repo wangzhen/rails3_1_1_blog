@@ -18,7 +18,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: blog3_staging
+  database: wangzhen_blog
   pool: 5
   username: root
   password: '123456'
