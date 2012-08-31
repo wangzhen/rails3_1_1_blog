@@ -581,9 +581,9 @@ p.person {
 
 #pagebody .submenu li {
     border-bottom: 1px solid #dedede;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 18px;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 #pagebody .submenu li a {

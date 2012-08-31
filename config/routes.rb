@@ -5,6 +5,7 @@ Rails311blog::Application.routes.draw do
         collection do
         get :resume
         get :logout
+        get :linode_hezu
         post :setlocale
       end
   end

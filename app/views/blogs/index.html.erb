@@ -12,7 +12,7 @@
 
     <div class="col-10">
       <% @blogs.each do |blog|  %>
-        <h3 class="head">[<%= blog.try(:category).try(:name) %>]&nbsp;&nbsp;<%= link_to  blog.title ,blog_path(blog) %></h3>
+        <h3 class="head" style='font-size: 20px;'>[<%= blog.try(:category).try(:name) %>]&nbsp;&nbsp;<%= link_to  blog.title ,blog_path(blog) %></h3>
       <% end %>
     </div>
 
