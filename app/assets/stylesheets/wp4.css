@@ -608,7 +608,7 @@ p.person {
 }
 
 #pagebody {
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 29px;
 }
 
@@ -695,6 +695,17 @@ a.rsslink {background:url(http://s.wordpress.org/style/images/feedicon10.png) to
     color: #aaa;
     float: left;
     font-size: 12px;
+}
+input.style1 {
+    background: #fff;
+    border: 1px solid #bbb;
+    margin-right: 6px;
+    margin-bottom: 12px;
+    width: 330px;
+    color: #000;
+    /*float: left;*/
+    /*font-size: 12px;*/
+    line-height: 24px;
 }
 
 #head-search .button {
