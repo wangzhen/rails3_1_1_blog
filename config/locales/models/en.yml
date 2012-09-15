@@ -1,5 +1,72 @@
 en:
-  activerecord:
+ activerecord:
     errors:
+      template:
+        header:
+          one: "有 1 个错误发生导致「{{model}}」无法被保存。"
+          other: "有 {{count}} 个错误发生导致「{{model}}」无法被保存。"
+        body: "如下字段出现错误："
       messages:
-        invalid_format: "is invalid"
+        inclusion: "不包含于列表中"
+        exclusion: "是保留关键字"
+        invalid: "是无效的"
+        confirmation: "与确认值不匹配"
+        accepted: "必须是可被接受的"
+        empty: "不能留空"
+        blank: "不能为空字符"
+        too_long: "过长（最长为 {{count}} 个字符）"
+        too_short: "過短（最短为 {{count}} 个字符）"
+        wrong_length: "长度非法（必须为 {{count}} 个字符）"
+        taken: "已经被使用"
+        not_a_number: "不是数字"
+        greater_than: "必须大于 {{count}}"
+        greater_than_or_equal_to: "必须大于或等于 {{count}}"
+        equal_to: "必须等于 {{count}}"
+        less_than: "必须小于 {{count}}"
+        less_than_or_equal_to: "必须小于或等于 {{count}}"
+        odd: "必须为单数"
+        even: "必须为双数"
+        invalid_format: "格式不正确"
+
+    models:
+      administrator: "管理员"
+      blog: "博客"
+      category: "博客分类"
+      fanxian: "返现"
+
+
+    attributes:
+      administrator:
+        name: 名称
+        password: 密码
+        password_confirmation: 确认密码
+      category:
+        name: 名称
+        created_at: 创建时间
+      blog:
+        name: 名称
+        category_id: 分类
+        title: 名称
+        content: 内容
+        created_at: 创建时间
+        password: 访问密码
+        kaishi: 开时时间
+        jieshu: 结束时间
+        qq: QQ
+        zhifubao: 支付宝
+        message: 给管理员留言
+        image1: 图片1
+        image2: 图片2
+        image3: 图片3
+        image4: 图片4
+      fanxian:
+        password: 访问密码
+        kaishi: 开始时间
+        jieshu: 结束时间
+        qq: QQ
+        zhifubao: 支付宝
+        message: 给管理员留言
+        image1: 图片1
+        image2: 图片2
+        image3: 图片3
+        image4: 图片4

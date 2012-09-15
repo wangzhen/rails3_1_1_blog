@@ -1,5 +1,5 @@
 zh:
-  activerecord:
+ activerecord:
     errors:
       template:
         header:
@@ -27,12 +27,13 @@ zh:
         odd: "必须为单数"
         even: "必须为双数"
         invalid_format: "格式不正确"
-        
 
     models:
       administrator: "管理员"
       blog: "博客"
       category: "博客分类"
+      fanxian: "返现"
+      comment: "回复"
 
 
     attributes:
@@ -49,3 +50,22 @@ zh:
         title: 名称
         content: 内容
         created_at: 创建时间
+      fanxian:
+        password: 访问密码
+        kaishi: 开始时间
+        jieshu: 结束时间
+        qq: QQ
+        zhifubao: 支付宝
+        message: 给管理员留言
+        remarks: 管理员说
+        image1: 重要凭证截图1
+        image2: 重要凭证截图2
+        image3: 重要凭证截图3
+        image4: 重要凭证截图4
+      comment:
+        email: 邮件
+        name: 姓名
+        content: 内容
+        qq: QQ
+
+
