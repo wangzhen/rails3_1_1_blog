@@ -1,6 +1,11 @@
 Rails311blog::Application.routes.draw do
  
-  resources :blogs
+
+
+
+  # match 'linode/:id' =>  "blogs#show"
+  match 'linode' =>  "blogs#index"
+  match 'linode-vps' =>  "tops#resume"
   resources :tops do
         collection do
         get :resume
@@ -9,6 +14,11 @@ Rails311blog::Application.routes.draw do
         post :setlocale
       end
   end
+
+    resources :fanxians 
+  resources :blogs
+    resources :comments
+ 
   #  namespace :admin do |admin|
   #    admin.login '/',:controller => 'sessions',:action => 'new'
   #    admin.resources :sessions,:collection => {:home=>[:get,:post],:logout=>[:get,:post] ,:setlocale => :post}
@@ -30,6 +40,8 @@ Rails311blog::Application.routes.draw do
     resources :blogs
     resources :links
     resources :pages
+    resources :fanxians
+    resources :comments
   end
 
   root :to => "tops#index"
