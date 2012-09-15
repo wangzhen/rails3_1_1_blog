@@ -1,6 +1,12 @@
 
 <!-- feed is cached -->
-<%= raw Page.find_by_id(1).try(:content) %>
+
+<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
+  <div class="wrapper">
+    <p class="intro">
+Linode 代购 返现 合租  Liunx 服务器配置 Ruby On Rails(ROR) 发布教程与问题 </p>
+  </div>
+</div>
 
 <div id="pagebody">
   <div class="wrapper">
@@ -8,9 +14,18 @@
 
     <div class="col-10">
       <% @blogs.each do |blog|  %>
-        <h3 class="head">[<%= blog.try(:category).try(:name) %>]&nbsp;&nbsp;<%= link_to  blog.title ,blog_path(blog) %></h3>
+        <h3 class="head" style='font-size: 16px;'><span style='display: block;
+float: left;
+width: 101px;
+text-align: center;
+padding-right: 8px;'>[<%= blog.try(:category).try(:name) %>]</span>&nbsp;&nbsp;<%= link_to  blog.title ,blog_path(blog) %></h3>
       <% end %>
+
+<br/>
+
       <%= paginate(@blogs ,:theme =>  'news') %>
+      <br/>
+      <br/>
     </div>
 
   </div>

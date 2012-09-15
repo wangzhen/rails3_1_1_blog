@@ -1,0 +1,124 @@
+
+
+<%= form_for  @fanxian, :url => path, :html => {:multipart => true ,:id => 'form'} do |form| %>
+  <div class="LeftNew">
+    <div class="Inner">
+      <%=render :partial => "/admin/shared/errors" ,:locals =>{:model => @fanxian }  %>
+      <div class="AcceNew">
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:password) %>(用于修改、查看、给管理员留言)</dt>
+          <dd>
+            <%= form.text_field   :password , :class => 'style1' %>
+          </dd>
+        </dl>
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:kaishi) %></dt>
+          <dd>
+            <%= form.text_field   :kaishi , :class => 'style1' %>
+          </dd>
+        </dl>
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:jieshu) %></dt>
+          <dd>
+            <%= form.text_field   :jieshu , :class => 'style1' %>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:qq) %></dt>
+          <dd>
+            <%= form.text_field   :qq , :class => 'style1' %>
+          </dd>
+        </dl>
+
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:zhifubao) %></dt>
+          <dd>
+            <%= form.text_field   :zhifubao , :class => 'style1' %>
+          </dd>
+        </dl>
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:message) %></dt>
+          <dd>
+            <%= form.text_field   :message , :class => 'style1' %>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:image1) %></dt>
+          <dd>
+            <%= form.file_field   :image1 , :class => 'style1' %>
+
+            <br />
+            <% unless @fanxian.image1.url.include?('missing') %>
+             <%= image_tag  @fanxian.image1.url %>
+            <%end%>
+          </dd>
+        </dl>
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:image2) %></dt>
+          <dd>
+            <%= form.file_field   :image2 , :class => 'style1' %>
+
+            <br />
+            <% unless @fanxian.image2.url.include?('missing') %>
+             <%= image_tag  @fanxian.image2.url %>
+            <%end%>
+
+          </dd>
+        </dl>
+
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:image3) %></dt>
+          <dd>
+            <%= form.file_field   :image3 , :class => 'style1' %>
+
+
+            <br />
+            <% unless @fanxian.image3.url.include?('missing') %>
+             <%= image_tag  @fanxian.image3.url %>
+            <%end%>
+
+          </dd>
+        </dl>
+
+
+
+        <dl>
+          <dt><%= Fanxian.human_attribute_name(:image4) %></dt>
+          <dd>
+            <%= form.file_field   :image4 , :class => 'style1' %>
+
+
+            <br />
+            <% unless @fanxian.image4.url.include?('missing') %>
+             <%= image_tag  @fanxian.image4.url %>
+            <% end %>
+
+
+          </dd>
+        </dl>
+
+      </div>
+      <div class="PostBtn">
+        <p>
+          <br />
+          <%= form.submit t('labels.save')  , :class=>"btnW2_search" %>
+        </p>
+        <br class="clear" />
+      </div>
+    </div>
+  </div>
+<% end %>

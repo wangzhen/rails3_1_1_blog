@@ -7,11 +7,14 @@
 #  parent_id  :integer(4)
 #  created_at :datetime
 #  updated_at :datetime
+#  sequ       :integer(4)      default(1)
 #
 
 class Category < ActiveRecord::Base
 
   has_many :blogs
+
+ default_scope :order => 'sequ desc'
 
   def self.root
     Category.where('parent_id' => nil)

@@ -12,8 +12,8 @@ class Admin::BasesController < ActionController::Base
       p  'ERROR_BASE'
     end
   end
-  require 'admin_template'
-  include AdminTemplate
+  # require 'admin_template'
+  # include AdminTemplate
 
   #
   #    protected
@@ -21,9 +21,11 @@ class Admin::BasesController < ActionController::Base
   #  ssl_required :admin_authorize if SSL_ENABLE
 
   def set_locale
-    session[:locale] = params[:locale] if params[:locale]
-    session[:locale] = "zh" if session[:locale].blank?
-    I18n.locale = session[:locale] || I18n.default_locale
+    # session[:locale] = params[:locale] if params[:locale]
+    # session[:locale] = "zh" if session[:locale].blank?
+    #     session[:locale] = "zh"
+    # I18n.locale = session[:locale] || I18n.default_locale
+    I18n.locale = 'zh'
   end
   def admin_authorize
     if session[:admin]

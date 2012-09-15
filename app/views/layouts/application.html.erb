@@ -6,7 +6,7 @@
     <%= javascript_include_tag :defaults %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
-@import url("/assets/wp4.css?20");
+@import url("/assets/wp4.css?10");
  #bodyContent h1, #bodyContent h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 22px;
@@ -42,7 +42,7 @@
 <body id="wordpress-org">
 <div id="header">
 	<div class="wrapper">
-          <h1><a href="/" class="copse" style="font-size: 50px;text-indent:0px;">Anthony's Blog</a></h1>
+          <h1><a href="/" class="copse" style="font-size: 50px;text-indent:0px;">Linode 吧<span style='font-size: 26px'> &nbsp;&nbsp;linode8.com </span></a></h1>
 
 		<form action="http://wordpress.org/search/do-search.php" method="get" id="head-search">
 			<input class="text" name="search" type="text" value="Search" maxlength="150" onfocus="this.value=(this.value=='Search') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Search' : this.value;" /> <input type="submit" class="button" value="Go" />
@@ -51,12 +51,16 @@
 
 <ul>
   <li><a href='/' title='Home is where the heart is.' class="<%= nav_on('tops','index') %>">首&nbsp;&nbsp;页</a></li>
-<li><a href='/tops/resume' class="<%= nav_on('tops','resume') %>" title='See some of the sites built on WordPress.'> 个人简介</a></li>
-<li><a href='/blogs' class="<%= nav_on('blogs','') %>" title='See some of the sites built on WordPress.'>博&nbsp;&nbsp;客</a></li>
-<li><a href='/blogs' class="<%= nav_on('tops','1') %>" title='See some of the sites built on WordPress.'>Rails</a></li>
-<li><a href='/blogs' class="<%= nav_on('tops','1') %>" title='See some of the sites built on WordPress.'>Javascript</a></li>
-<li><a href='/blogs' class="<%= nav_on('tops','1') %>" title='See some of the sites built on WordPress.'>生活随笔</a></li>
-<li id="download"><a href='/tops/linode_hezu' title='Get it. Got it? Good.'>&nbsp;Linode合租 &nbsp;</a></li>
+  <!--
+<li><a href='/linode-vps' class="<%= nav_on('tops','resume') %>" title='See some of the sites built on WordPress.'> 联系方式</a></li>
+-->
+<li><a href='/linode' class="<%= nav_on('blogs','index') %>" title='Linode 代购 Linode返现  Linode合租'>博&nbsp;&nbsp;客</a></li>
+<li><a href='/blogs?category_id=4' class="<%= nav_on('tops','1') %>" title='Ruby On Rails'>Ruby On Rails</a></li>
+<li><a href='/blogs/11-linode' class="<%= params[:id] == '11-linode' ? 'current' : ''  %>" title='Linode购买教程'>Linode购买教程</a></li>
+<li><a href='/fanxians' class="<%= nav_on('fanxians','')%> " title='Linode返佣'>Linode返佣</a></li>
+
+
+<li id="download"><a href='/blogs/12-linode-vps' title='Linode合租'>&nbsp;Linode合租 &nbsp;</a></li>
 </ul>
 	</div>
 </div>

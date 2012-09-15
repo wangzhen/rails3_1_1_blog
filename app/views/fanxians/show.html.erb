@@ -1,0 +1,71 @@
+
+<!-- feed is cached -->
+
+<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
+  <div class="wrapper">
+    <p class="intro"><strong>Anthony's Blog</strong> 主要记录个的技术经验，与生活感想</p>
+  </div>
+</div>
+<div id="pagebody">
+  <div class="wrapper">
+    <%= render :partial => "/shared/left_banner" %>
+<div class="col-10" id="bodyContent">
+            <h2 class="pagetitle"> 输入正确密码后才可以修改,如忘记密码可以联系管理;QQ:601259096</h2>
+                  <!-- start content -->
+ 
+
+
+
+
+
+
+
+<%= form_tag    edit_fanxian_path(@fanxian) ,:method => :get do |form| %>
+  <div class="LeftNew">
+    <div class="Inner">
+      <div class="AcceNew">
+        <dl>
+          <dt><%= controller_name.classify.constantize.human_attribute_name(:password) %></dt>
+          <dd>
+            <%= password_field_tag   :password ,'' ,:class=>'style1'  %>
+          </dd>
+        </dl>
+      </div>
+      <div class="PostBtn">
+        <p>
+          <br/>
+          <%= submit_tag "提交"   %>
+        </p>
+        <br class="clear" />
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br/>
+
+ <img src='/images/linode-ad.jpg' />
+  <br/>
+  </div>
+</div>
+
+ 

@@ -1,3 +1,4 @@
+ #coding: utf-8
 class BlogsController < ApplicationController
   # GE: /blogs
   # GET /blogs.xml
@@ -5,7 +6,7 @@ class BlogsController < ApplicationController
     @search = Blog.search(params[:search])
     @search.category_id_equals = params[:category_id] unless params[:category_id].blank?
     @blogs = @search.page( params[:page]).per(10 ||params[:per_page])
-    @title = 'Anthony Blog | Ruby on Rails | ROR | ror | rails | ruby'
+    @title = ' Anthony Linode 代购 返现 合租 Liunx 服务器配置 Ruby On Rails(ROR) 发布教程'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @blogs }
@@ -16,7 +17,14 @@ class BlogsController < ApplicationController
   # GET /blogs/1.xml
   def show
     @blog = Blog.find(params[:id])
-    @title = "#{@blog.title} | Anthony Blog | Ruby on Rails | ROR"
+    @title = "#{@blog.title} Linode 代购 返现 合租 Liunx 服务器配置 Ruby On Rails(ROR) 发布教程"
+    @comment = Comment.new(:blog_id => @blog.id)
+ 
+    @comment.name   =  cookies['name']
+    @comment.qq = cookies['qq'] 
+    @comment.content = cookies['content'] 
+    @comment.email = cookies['email'] 
+ 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @blog }

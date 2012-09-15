@@ -24,7 +24,7 @@
 < % end -%>
 -->
 <%= paginator.render do -%>
-<div class="Page">
+<div class="Page" style='text-align: center;'>
     <%= first_page_tag unless current_page.first? %>
     <%= prev_page_tag unless current_page.first? %>
     <% each_page do |page| -%>

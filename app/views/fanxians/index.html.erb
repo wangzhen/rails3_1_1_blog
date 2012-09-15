@@ -1,0 +1,38 @@
+
+<!-- feed is cached -->
+
+<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
+  <div class="wrapper">
+    <p class="intro">
+Linode 返现 Linode 返佣   <%= link_to 'Linode返现链接' ,"http://www.linode.com/?r=f0763d5be722c2e92526704098a9138fd22d6537" ,  :target  => "_blank" %>  </p>
+  </div>
+</div>
+
+<div id="pagebody">
+  <div class="wrapper">
+    <%= render :partial => "/shared/left_banner" %>
+    <div class="col-10">
+
+        <h3 class="head" style='font-size: 16px;'>
+ 
+<%= link_to "如果你已用我的推荐，请添加返佣信息，点击些链接就可以添加 。如果你觉得麻烦也可直接联系管理QQ601259096  " ,new_fanxian_path %>
+   
+        </h3>
+
+      <% @fanxians.each do |fanxian|  %>
+        <h3 class="head" style='font-size: 16px;'>
+   <%= fanxian.kaishi%>  ~~ <%= fanxian.jieshu%> 状态: <%= fanxian.remarks%>  
+<%= link_to '修改与查看' ,fanxian_path(:id => fanxian.id) %>
+   
+        </h3>
+      <% end %>
+
+<br/>
+
+      <%= paginate(@fanxians ,:theme =>  'news') %>
+      <br/>
+      <br/>
+    </div>
+
+  </div>
+</div>

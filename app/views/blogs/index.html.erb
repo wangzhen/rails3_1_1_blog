@@ -3,19 +3,30 @@
 
 <div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
   <div class="wrapper">
-    <p class="intro"><strong>Anthony's Blog</strong> 主要记录个的技术经验，与生活感想</p>
+    <p class="intro">
+Linode 代购 返现 合租  Liunx 服务器配置 Ruby On Rails(ROR) 发布教程与问题 </p>
   </div>
 </div>
+
 <div id="pagebody">
   <div class="wrapper">
     <%= render :partial => "/shared/left_banner" %>
 
     <div class="col-10">
       <% @blogs.each do |blog|  %>
-        <h3 class="head" style='font-size: 20px;'>[<%= blog.try(:category).try(:name) %>]&nbsp;&nbsp;<%= link_to  blog.title ,blog_path(blog) %></h3>
+        <h3 class="head" style='font-size: 16px;'><span style='display: block;
+float: left;
+width: 139px;
+text-align: center;
+padding-right: 8px;'>[<%= blog.try(:category).try(:name) %>]</span>&nbsp;&nbsp;<%= link_to  blog.title ,blog_path(:id =>"#{blog.id}-#{blog.title}") %></h3>
       <% end %>
-    </div>
+
+<br/>
 
       <%= paginate(@blogs ,:theme =>  'news') %>
+      <br/>
+      <br/>
+    </div>
+
   </div>
 </div>

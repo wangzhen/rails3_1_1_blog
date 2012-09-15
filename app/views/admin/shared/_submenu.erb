@@ -36,6 +36,20 @@
 
 
 
+      <li class="Level1 <%= 'current' if controller_name == 'comment' %>"><%= link_to t('labels.manager', :model => Comment.model_name.human), admin_comments_path, :class => "l1" %>
+        <% if  ['comments'].include?(controller_name) %>
+          <ul class="Level2">
+            <li class=" <%= (action_name=='edit'||action_name=='index')&& controller_name=='comment' ? 'on' :'' %>">
+              <%= link_to t('labels.manager', :model => Comment.model_name.human), admin_comments_path %>
+            </li>
+            <li class="last <%= action_name=='new'&& controller_name=='news' ? 'on' :'' %>">
+              <%= link_to t('labels.add_manager', :model => Comment.model_name.human), new_admin_comment_path %>
+            </li>
+          </ul>
+        <% end %>
+      </li>
+
+
       <li class="Level1 <%= 'current' if controller_name == 'categories' %>"><%= link_to t('labels.manager', :model => Category.model_name.human), admin_categories_path, :class => "l1" %>
         <% if  ['categories'].include?(controller_name) %>
           <ul class="Level2">

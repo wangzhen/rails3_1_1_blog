@@ -1,0 +1,74 @@
+<style>
+.AcceNew dt{width: 50px;float: left}
+</style>
+<span >回复:</span>
+<hr/>
+<% @blog.comments.each do |c|%>
+<span style='font-size: 12px;
+color: #BBB;font-style: italic;'>At  <%= c.created_at.to_s(:db)%></span>
+ <table style='border: 1px solid #AAA;padding:10px;
+width: 100%;'>
+<tr>  <td style='font-size: 12px;
+color: #BBB;'> <%= c.name%>   说: </td></tr>
+<tr>  <td>  <%= c.content%>  </td></tr>
+ </table>
+ <br />
+ <% end %>
+<br />
+
+
+<%= form_for  @comment , :url => comments_path, :html => {:multipart => true ,:id => 'form'} do |form| %>
+  <div class="LeftNew">
+    <div class="Inner">
+      <div class="AcceNew">
+ 
+        <dl style='display:none'>
+          <dt><%= Comment.human_attribute_name(:blog_id) %></dt>
+          <dd>
+            <%= form.text_field   :blog_id , :class => 'style1' %>
+          </dd>
+        </dl>
+    
+
+        <dl>
+          <dt><%= Comment.human_attribute_name(:email) %></dt>
+          <dd>
+            <%= form.text_field   :email , :class => 'style1' %>
+          </dd>
+        </dl>
+    
+
+        <dl>
+          <dt><%= Comment.human_attribute_name(:qq) %></dt>
+          <dd>
+            <%= form.text_field   :qq , :class => 'style1' %>
+          </dd>
+        </dl>
+    
+
+        <dl>
+          <dt><%= Comment.human_attribute_name(:name) %></dt>
+          <dd>
+            <%= form.text_field   :name , :class => 'style1' %>
+          </dd>
+        </dl>
+
+        <dl>
+          <dt><%= Comment.human_attribute_name(:content) %></dt>
+          <dd>
+            <%= form.text_area   :content , :class => 'style1' ,:size => '60x8' ,:style => 'border: 1px solid #BBB;' %>
+          </dd>
+        </dl>
+
+
+      </div>
+      <div class="PostBtn" style='width:561px;text-algin:right'>
+        <p style='width:561px;text-align: right;padding-top:8px'>
+
+          <%= form.submit t('labels.save')  , :class=>"btnW2_search" %>
+        </p>
+        <br class="clear" />
+      </div>
+    </div>
+  </div>
+<% end %>

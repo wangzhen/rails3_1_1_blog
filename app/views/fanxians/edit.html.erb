@@ -1,0 +1,25 @@
+
+<!-- feed is cached -->
+
+<div id="home-welcome" style="padding-bottom: 14px; min-height: inherit;">
+  <div class="wrapper">
+        <p class="intro">
+Linode 返现 Linode 返佣  </p>
+  </div>
+</div>
+<div id="pagebody">
+  <div class="wrapper">
+    <%= render :partial => "/shared/left_banner" %>
+<div class="col-10" id="bodyContent">
+            <h2 class="pagetitle">请正确添写返佣人信息 ,以作为返还现金的凭证 </h2>
+                  <!-- start content -->
+<%= render :partial => "form"  , :locals=>{:path=> fanxian_path(@fanxian) } %>
+
+ <br/>
+
+ <img src='/images/linode-ad.jpg' />
+  <br/>
+  </div>
+</div>
+
+ 
