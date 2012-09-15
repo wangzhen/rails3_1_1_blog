@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328032121) do
+ActiveRecord::Schema.define(:version => 20120903082206) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120328032121) do
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sequ",       :default => 1
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -55,6 +56,46 @@ ActiveRecord::Schema.define(:version => 20120328032121) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "blog_id"
+    t.string   "email"
+    t.string   "qq"
+    t.string   "name"
+    t.text     "content"
+    t.string   "ip"
+    t.boolean  "is_check"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fanxians", :force => true do |t|
+    t.string   "kaishi"
+    t.string   "password"
+    t.string   "jieshu"
+    t.string   "qq"
+    t.string   "zhifubao"
+    t.string   "message"
+    t.string   "remarks"
+    t.string   "image1_file_name"
+    t.string   "image1_content_type"
+    t.integer  "image1_file_size"
+    t.datetime "image1_updated_at"
+    t.string   "image2_file_name"
+    t.string   "image2_content_type"
+    t.integer  "image2_file_size"
+    t.datetime "image2_updated_at"
+    t.string   "image3_file_name"
+    t.string   "image3_content_type"
+    t.integer  "image3_file_size"
+    t.datetime "image3_updated_at"
+    t.string   "image4_file_name"
+    t.string   "image4_content_type"
+    t.integer  "image4_file_size"
+    t.datetime "image4_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "links", :force => true do |t|
     t.string "url"
