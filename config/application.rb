@@ -28,15 +28,20 @@ module Rails311blog  class Application < Rails::Application
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
+    # config.time_zone = 'BeiJing'
+
+    config.time_zone = 'Beijing'
+    config.active_record.default_timezone = :local
+    config.active_record.time_zone_aware_attributes = false # this is important!
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{yml}').to_s]
     # config.i18n.default_locale = :de
-    config.i18n.default_locale = :zh
+    config.i18n.default_locale = 'zh'
     # Configure the default encoding used in templates for Ruby 1.9.
-    #    config.encoding = "utf-8"
+    config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
