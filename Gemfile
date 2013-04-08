@@ -21,7 +21,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem 'kaminari'
 # gem 'execjs', :git => 'https://github.com/sstephenson/execjs.git'
-# gem 'therubyracer' ,:git => 'https://github.com/cowboyd/therubyracer.git'
+#gem 'therubyracer' ,:git => 'https://github.com/cowboyd/therubyracer.git'
 gem 'hpricot'
 gem 'rufus-scheduler'
 gem 'bcrypt-ruby'
